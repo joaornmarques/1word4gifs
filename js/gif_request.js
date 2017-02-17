@@ -8,7 +8,7 @@ var data;
 function getGifs(){
   var gifsHtml = '';
 	
-	var query = domain + 'mario' + "&limit=" + 4 + apiKey;
+	var query = domain + 'sonic' + "&limit=" + 4 + apiKey;
 	console.log(query);
 
 	
