@@ -7,10 +7,10 @@ var answer_key;
 function getGifs(){
     var gifsHtml = '';
     var gifsLink = '';
-	var randomValue = Math.floor((Math.random() * 25) + 1);
+	var randomValue = Math.floor((Math.random() * 20) + 1);
     
     var unique = true;
-    var num = Math.floor(Math.random() * keys.length - 5);
+    var num = Math.floor(Math.random() * keys.length);
     var name = keys.splice(num,1);
     keys.push(name);
     
@@ -31,7 +31,7 @@ function getGifs(){
 			for(var i = 0; i < data.data.length; i++){
                 
                 gifsLink = data.data[i].images.original.url 
-                gifsHtml += '<div class="gif__image" style="background-image: url('+ gifsLink +');"></div>';
+                gifsHtml += '<div class="gif__image gif__image-' + (i+1) + '" style="background-image: url('+ gifsLink +');"></div>';
 			}
 			//console.log(gifsHtml);
 			document.getElementById("gif__container").innerHTML = gifsHtml;

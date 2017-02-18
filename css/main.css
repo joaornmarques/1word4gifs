@@ -5,14 +5,14 @@ body{
     font-weight: lighter;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6,p{
     color: white;
 }
 
 h1{
     font-size: 60px;
     letter-spacing: 2px;
-    margin: 10% 0 0 0;
+    margin: 20vh 0 0 0;
     font-weight: bold;
 }
 
@@ -24,13 +24,23 @@ h2{
 
 h3{
     font-size: 50px;
-    letter-spacing: 1.8px;
-    margin: 10% 0 0 0;
+    margin: 20vh 0 0 0;
+}
+
+h4{
+    font-size: 20px;
+    font-weight: lighter;
+    margin: 10px 0;
 }
 
 .title-note{
     font-size: 20px;
     padding: 0 10px;
+    animation: overlay-animate 0.4s ease 0.7s 3;
+}
+
+.title-note-big{
+    font-size: 38px;
 }
 
 .button{
@@ -71,9 +81,9 @@ h3{
     height: 100vh;
     top: 0;
     left: 0;
-    filter: brightness(0.4) blur(5px);
-    -webkit-filter: brightness(0.4) blur(5px);
-    -moz-filter: brightness(0.4) blur(5px);   
+    filter: brightness(0.4);
+    -webkit-filter: brightness(0.4);
+    -moz-filter: brightness(0.4);   
 }
 
 .intro__content{
@@ -122,14 +132,13 @@ h3{
     animation: opacity-animate 0.7s cubic-bezier(1,.01,.65,1) ;
 }
 
-
 /*--------GAME MECHANINC----------*/
 
 .timer-bar{
     position: fixed;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 80vw;
     height: 20px;
     background: -webkit-linear-gradient(left, #A0F, #F00);
     z-index: 1;
@@ -172,8 +181,13 @@ input:focus {
 }
 
 
+@keyframes point-animate {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 @keyframes overlay-animate {
-    from {opacity: 0; transform: scale(0.8);}
+    from {opacity: 0; transform: scale(0.6);}
     to {opacity: 1; transform: scale(1);}
 }
 
@@ -181,6 +195,42 @@ input:focus {
     from {opacity: 0; height: 0;}
     to {opacity: 1; height: 85vh;}
 }
+
+/*----------SCOREBOARD----------*/
+
+.scoreboard{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 15vh;
+}
+
+.scoreboard__info{
+    transform: rotate(90deg);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #444;
+    margin-bottom: 2.6vw;
+    margin-right: 0;
+    font-size: 1vw;
+    letter-spacing: 0.2vw;
+    font-weight: 400;
+}
+
+.scoreboard__value{
+    position: absolute;
+    text-align: right;
+    margin: 0;
+    right: 4vw;
+    font-size: 5.5vw;    
+    top: 0;
+    background: -webkit-linear-gradient(left top, #A0F, #F00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
 
 
 /*-----------OVERLAY------------*/
@@ -190,7 +240,7 @@ input:focus {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.85);
     z-index: -1;
     opacity: 1;
     animation: overlay-animate 0.3s ease ;

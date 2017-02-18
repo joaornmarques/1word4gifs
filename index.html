@@ -39,19 +39,30 @@
                 <form onsubmit="return false">
                     <input id="answer" class="gif__answer-text" placeholder="Type answer here" type="text"><br>
                 </form>
+                <div class="scoreboard">
+                    <h5 class="scoreboard__value"></h5>
+                    <p class="scoreboard__info">SCORE</p>
+                </div>
             </section>
         </div>  
         
         <section class="overlay overlay__lose">
-            <h1>looser!</h1>
+            <div class="row center-xs">
+                <h3><span class="intro-logo__color lose-message"></span></h3>
+            </div> 
+            <div class="row center-xs lose-result">
+            </div>
+            <div class="row center-xs intro-details">
+                    <a class="button" onclick="newGif()">Play again</a>
+            </div>
         </section>
         <section class="overlay overlay__win">
             <div class="row center-xs">
-                <h3><span class="intro-logo__color">Nice catch!</span><span class="title-note">+1 point</span></h3>
+                <h3><span class="intro-logo__color win-message"></span><span class="title-note">+1 point</span></h3>
             </div>    
             <div class="row center-xs intro-details">
                     <a class="button" onclick="newGif()">Next ></a>
-                </div>
+            </div>
         </section>
         
     </body>
