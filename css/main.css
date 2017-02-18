@@ -37,6 +37,12 @@ h2{
     color: #A0F;
     border-color: #A0F;
     transition: 0.2s;
+    cursor: pointer;
+}
+
+.game{
+    opacity: 0;
+    transition: 0.5s ease;
 }
 
 /*-----------INTRO-------------*/
@@ -101,13 +107,55 @@ h2{
     float: left;
     background-position: center;
     background-size: cover;
+    z-index: -1;
 }
 
 
 /*--------GAME MECHANINC----------*/
 
+.timer-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 20px;
+    background: -webkit-linear-gradient(left, #A0F, #F00);
+    z-index: 1;
+}
 
+input{
+    float: left;
+}
 
+.gif__answer-text{
+    width: 60vw;
+    height: 13vh;
+    background: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 30px;
+    padding-top: 10px;
+    font-size: 6vh;
+    font-weight: 600;
+    color: white;
+}
+
+input:focus {
+   outline:none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #444;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #444;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #444;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #444;
+}
 
 /*---------BREAKPOINT-----------*/
 

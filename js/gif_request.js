@@ -8,9 +8,10 @@ var data;
 function getGifs(){
     var gifsHtml = '';
     var gifsLink = '';
-	
-	var query = domain + 'charizard' + "&limit=" + 4 + apiKey;
-	console.log(query);
+	var randomValue = Math.floor((Math.random() * 25) + 1);
+    console.log(randomValue);
+    
+	var query = domain + 'vaporwave' + "&limit=" + 4 + "&offset=" + randomValue + apiKey;
 
 	
 	request.open ('GET', query, true);
