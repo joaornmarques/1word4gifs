@@ -1,7 +1,7 @@
 var apiKey = "&api_key=dc6zaTOxFJmzC"
 var domain = "https://api.giphy.com/v1/gifs/search?q="
 var request = new XMLHttpRequest;
-var answer_key = "money";
+var answer_key = "apple";
 
 var data;
 
@@ -40,7 +40,7 @@ function getGifs(){
 
 function randomGif(){
     request = new XMLHttpRequest();
-	request.open('GET', "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=followers", true);
+	request.open('GET', "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=game", true);
 
 	request.onload = function(){
 		if(request.status >= 200 && request.status < 400){

@@ -17,7 +17,7 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
     </head>
 
-    <body onload="randomGif()">
+    <body onload="randomGif();">
         
         <section id="intro" class="intro-span">
             <img id="intro-background" src=""/>
@@ -25,7 +25,7 @@
                 <h1 class="intro-logo">1 Word <span class="intro-logo__color">4 Gifs</span></h1>
                 <h2 class="intro-punchline">You may be cool, but you know your gifs?</h2>
                 <div class="row center-xs intro-details">
-                    <a class="button" onclick="closeIntro();getGifs();activeTimer();">Let's start</a>
+                    <a class="button" onclick="closeIntro();newGif();">Let's start</a>
                 </div>
             </div>
         </section>
@@ -41,7 +41,17 @@
             </section>
         </div>  
         
-        
+        <section class="overlay overlay__lose">
+            <h1>looser!</h1>
+        </section>
+        <section class="overlay overlay__win">
+            <div class="row center-xs">
+                <h3><span class="intro-logo__color">Nice catch!</span><span class="title-note">+1 point</span></h3>
+            </div>    
+            <div class="row center-xs intro-details">
+                    <a class="button" onclick="newGif()">Next ></a>
+                </div>
+        </section>
         
     </body>
 </html>
