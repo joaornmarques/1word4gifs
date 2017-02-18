@@ -18,6 +18,7 @@
     </head>
 
     <body onload="randomGif()">
+        
         <section id="intro" class="intro-span">
             <img id="intro-background" src=""/>
             <div class="intro__content">
@@ -28,17 +29,19 @@
                 </div>
             </div>
         </section>
+        
         <div class="game">
             <section id="gif__container">
             </section>
             <section class="gif__answer">
                 <div class="timer-bar"></div>
-                <form>
-                    <input id="answer" class="gif__answer-text" placeholder="Write here the answer" type="text"><br>
-                    <input type="submit" value="Submit">
-                    <p style="color: white" class="timer"></p>
+                <form onsubmit="return false">
+                    <input id="answer" class="gif__answer-text" placeholder="Type answer here" type="text"><br>
                 </form>
             </section>
-        </div>    
+        </div>  
+        
+        
+        
     </body>
 </html>

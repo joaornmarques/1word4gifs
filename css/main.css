@@ -108,6 +108,8 @@ h2{
     background-position: center;
     background-size: cover;
     z-index: -1;
+    opacity: 1;
+    animation: opacity-animate 0.7s cubic-bezier(1,.01,.65,1) ;
 }
 
 
@@ -121,6 +123,8 @@ h2{
     height: 20px;
     background: -webkit-linear-gradient(left, #A0F, #F00);
     z-index: 1;
+    transition: 0.2s ease;
+    box-shadow: 0px 0px 10px #444;
 }
 
 input{
@@ -156,6 +160,13 @@ input:focus {
 :-moz-placeholder { /* Firefox 18- */
   color: #444;
 }
+
+
+@keyframes opacity-animate {
+    from {opacity: 0; height: 0;}
+    to {opacity: 1; height: 85vh;}
+}
+
 
 /*---------BREAKPOINT-----------*/
 

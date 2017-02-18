@@ -1,7 +1,7 @@
 var apiKey = "&api_key=dc6zaTOxFJmzC"
 var domain = "https://api.giphy.com/v1/gifs/search?q="
 var request = new XMLHttpRequest;
-
+var answer_key = "money";
 
 var data;
 
@@ -11,7 +11,7 @@ function getGifs(){
 	var randomValue = Math.floor((Math.random() * 25) + 1);
     console.log(randomValue);
     
-	var query = domain + 'vaporwave' + "&limit=" + 4 + "&offset=" + randomValue + apiKey;
+	var query = domain + answer_key + "&limit=" + 4 + "&offset=" + randomValue + apiKey;
 
 	
 	request.open ('GET', query, true);
