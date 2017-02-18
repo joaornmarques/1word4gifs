@@ -11,13 +11,12 @@ function getGifs(){
     
     var unique = true;
     var num = Math.floor(Math.random() * keys.length);
-    var name = keys.splice(num,1);
-    keys.push(name);
     
     answer_key = keys[num];
     
     
     console.log(answer_key);
+    console.log(winPoint);
     
 	var query = domain + answer_key + "&limit=" + 4 + "&offset=" + randomValue + apiKey;
 
@@ -33,7 +32,6 @@ function getGifs(){
                 gifsLink = data.data[i].images.original.url 
                 gifsHtml += '<div class="gif__image gif__image-' + (i+1) + '" style="background-image: url('+ gifsLink +');"></div>';
 			}
-			//console.log(gifsHtml);
 			document.getElementById("gif__container").innerHTML = gifsHtml;
 		} else {
 			alert('Oh my GIF! Something bad happened...');
@@ -44,6 +42,10 @@ function getGifs(){
 		alert('connection error');
 	};
 	request.send();
+    
+    
+    var name = keys.splice(num,1);
+    keys.push(name);
 }    
 
 function randomGif(){
@@ -53,7 +55,6 @@ function randomGif(){
 	request.onload = function(){
 		if(request.status >= 200 && request.status < 400){
 			gifURL= JSON.parse(request.responseText).data.image_url;
-			console.log(gifURL);
 			document.getElementById("intro-background").src = gifURL;
             
 		} else {

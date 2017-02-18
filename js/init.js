@@ -21,7 +21,6 @@ function activeTimer(){
 function timer(){
     if(timerStart == true){
         count=count-1;
-        console.log(count);
         if (count < 0){
             loseGame();
             return;
@@ -38,12 +37,10 @@ function winGame(){
     var rand_win_message = message_win[Math.floor(Math.random() * message_win.length)];
     $(".win-message").append('' + rand_win_message + '');
     points++;
-    winPoint = true;
 }
 
 $(document).keypress(function(e) {
     if(e.which == 13 && winPoint == true) {
-        winPoint == false;
         newGif();
     }
 });
@@ -62,17 +59,20 @@ function clearWinOverlay(){
     $(".lose-result").empty();
     $(".win-message").empty();
     $(".lose-message").empty();
-    $(".scoreboard__value").empty();
+    winPoint == false;
 }
 
 function newGif(){
     $(".gif__image").remove();
     $("input").prop('disabled', false).val('').focus();
     $(".overlay").hide();
+    $(".scoreboard__value").empty();
     $(".scoreboard__value").append('' + points + '');
+    
     clearWinOverlay();
     activeTimer();
     getGifs();
+    winPoint = false; 
 }
 
 
@@ -85,7 +85,8 @@ jQuery(function($) {
     $( "#answer" ).keyup(function() {
         var lowercaseVal = $(this).val().toLocaleLowerCase();
         if(lowercaseVal == answer_key){
-            console.log('WIN WIN WIN');
+            winPoint = true;
+            console.log(winPoint);
             winGame();
         }
     });

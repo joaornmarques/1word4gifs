@@ -28,7 +28,7 @@ var keys = 		["sonic" ,
 				"bale" ,
 				"neymar" ,
 				"suarez" ,
-				"griezman" ,
+				"griezmann" ,
 				"neuer",
 				"pogba" ,
 				"dab" ,
@@ -146,7 +146,6 @@ var keys = 		["sonic" ,
                 "graffiti" ,
                 "giraffe" ,
                 "shotgun" ,
-                "france" ,
                 "beard" ,
                 "karate" ,
                 "rolling" ,
@@ -157,6 +156,6 @@ var keys = 		["sonic" ,
                 "queen" ,
 				];
 
-var message_win = ["Nice catch!", "Good one!", "You're clever!", "Keep up!", "Nice one!", "Don't stop now!"];
+var message_win = ["Nice catch! ", "Good one! ", "You're clever! ", "Keep up! ", "Nice one! ", "Don't stop now! "];
 
 var message_lose = ["Looooser...", "Game over.", "Wrong!", "That's all folks."];
