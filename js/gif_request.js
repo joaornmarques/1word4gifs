@@ -8,7 +8,15 @@ function getGifs(){
     var gifsHtml = '';
     var gifsLink = '';
 	var randomValue = Math.floor((Math.random() * 25) + 1);
-    answer_key = keys[Math.floor(Math.random() * keys.length)];
+    
+    var unique = true;
+    var num = Math.floor(Math.random() * keys.length - 5);
+    var name = keys.splice(num,1);
+    keys.push(name);
+    
+    answer_key = keys[num];
+    
+    
     console.log(answer_key);
     
 	var query = domain + answer_key + "&limit=" + 4 + "&offset=" + randomValue + apiKey;
