@@ -2,6 +2,7 @@ body{
     margin: 0;
     background: #181818;
     font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -12,11 +13,12 @@ h1{
     font-size: 60px;
     letter-spacing: 2px;
     margin: 10% 0 0 0;
+    font-weight: bold;
 }
 
 h2{
     font-size: 20px;
-    font-weight: 400;
+    font-weight: lighter;
     letter-spacing: 0.8px;
 }
 
