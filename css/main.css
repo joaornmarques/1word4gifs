@@ -1,6 +1,96 @@
 body{
     margin: 0;
+    background: #181818;
+    font-family: 'Poppins', sans-serif;
 }
+
+h1,h2,h3,h4,h5,h6{
+    color: white;
+}
+
+h1{
+    font-size: 60px;
+    letter-spacing: 2px;
+    margin: 10% 0 0 0;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    
+}
+
+
+.button{
+    color: white;
+    border: solid 2px white;
+    padding: 5px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.button:hover{
+    color: #A0F;
+    border-color: #A0F;
+    transition: 0.2s;
+}
+
+/*-----------INTRO-------------*/
+
+.intro-punchline{
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+}
+
+#intro-background{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    filter: brightness(0.4) blur(5px);
+    -webkit-filter: brightness(0.4) blur(5px);
+    -moz-filter: brightness(0.4) blur(5px);   
+}
+
+.intro__content{
+    z-index: 99999;
+}
+
+.intro-button{
+    margin: auto;
+}
+
+.intro-logo{
+    text-align: center;
+}
+
+.intro-details{
+    margin-top: 5%;
+}
+
+.intro-logo__color{
+    background: -webkit-linear-gradient(left top, #A0F, #F00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-span{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    
+}
+
+/*------------GIFS-------------*/
+
 #gif__conainer{
     max-width: 100vw;
 }
@@ -13,14 +103,18 @@ body{
     background-size: cover;
 }
 
-.teste{
-    background-image: url('https://i.ytimg.com/vi/OWJNGNV5J9s/maxresdefault.jpg');
-    height: 40px;
-    width: 40px;
-}
 
+/*--------GAME MECHANINC----------*/
+
+
+
+
+/*---------BREAKPOINT-----------*/
 
 @media (max-width:767px) { 
+    h1{
+        font-size: 30px;
+    }
     .gif__image{
         width: 100vw;
         height: 20vh;

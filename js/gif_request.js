@@ -9,7 +9,7 @@ function getGifs(){
     var gifsHtml = '';
     var gifsLink = '';
 	
-	var query = domain + 'nyan+cat' + "&limit=" + 4 + apiKey;
+	var query = domain + 'charizard' + "&limit=" + 4 + apiKey;
 	console.log(query);
 
 	
@@ -36,3 +36,24 @@ function getGifs(){
 	};
 	request.send();
 }    
+
+function randomGif(){
+    request = new XMLHttpRequest();
+	request.open('GET', "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=followers", true);
+
+	request.onload = function(){
+		if(request.status >= 200 && request.status < 400){
+			gifURL= JSON.parse(request.responseText).data.image_url;
+			console.log(gifURL);
+			document.getElementById("intro-background").src = gifURL;
+            
+		} else {
+			alert('Oh my GIF! Something bad happened...');
+		}
+	};
+
+	request.oneerror = function() {
+		alert('connection error');
+	};
+	request.send();
+}

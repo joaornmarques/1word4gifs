@@ -1,0 +1,3 @@
+function closeIntro() {
+    $("#intro").hide();
+}
