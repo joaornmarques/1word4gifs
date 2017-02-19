@@ -501,6 +501,5 @@ var keys = 		["sonic" ,
 				"victory"
 				]; 
 
-var message_win = ["Nice catch! ", "Good one! ", "You're clever! ", "Keep up! ", "Nice one! ", "Don't stop now! "];
-
-var message_lose = ["Looooser...", "Game over.", "Wrong!", "That's all folks."];
+var message_win = ["Nice catch! ", "Good one! ", "You're clever! ", "Keep up! ", "Nice one! ", "Don't stop! "];
+var message_lose = ["Looooser...", "Game over.", "You lose!"]; 
