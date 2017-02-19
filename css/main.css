@@ -362,7 +362,7 @@ input:focus {
 /*--------utilities---------*/
 
 .hide{
-    display: hidden;
+    display: none;
 }
 
 .show{
