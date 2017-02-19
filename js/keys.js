@@ -497,7 +497,16 @@ var keys = 		["sonic" ,
 				"fail" ,
 				"magic" ,
 				"win",
-				"victory"
+				"victory" ,
+				"trickshot" ,
+				"cringe" ,
+				"damn" ,
+				"russian" ,
+				"jackson" ,
+				"luck" ,
+				"grinch" ,
+				"yolo" ,
+				"burn"
 				]; 
 
 var message_win = ["Nice catch! ", "Good one! ", "You're clever! ", "Keep up! ", "Nice one! ", "Don't stop! "];
