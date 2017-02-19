@@ -102,7 +102,7 @@ jQuery(function($) {
         $(".points-overlay").append('' + 0 + '');
     });
     
-    $( "#answer" ).keyup(function() {
+    $( "#answer" ).keyup(function() {  
         var lowercaseVal = $(this).val().toLocaleLowerCase();
         if(lowercaseVal == answer_key){
             winPoint = true;

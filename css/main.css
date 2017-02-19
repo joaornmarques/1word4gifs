@@ -149,6 +149,8 @@ h4{
     width: 25vw;
     height: 85vh;
     float: left;
+    display: inline;
+    max-height: 85vh;
     background-position: center;
     background-size: cover;
     z-index: -1;
@@ -236,21 +238,24 @@ input:focus {
 
 .scoreboard__info{
     transform: rotate(90deg);
+    position: absolute;
     right: 0;
     bottom: 0;
     color: #444;
-    margin-bottom: 2.6vw;
+    margin-bottom: 5vh;
     margin-right: 0;
-    margin-top: 30px;
-    font-size: 1vw;
-    letter-spacing: 0.2vw;
+    font-size: 1.8vh;
+    letter-spacing: 0.4vh;
     font-weight: 400;
-    float: right;
 }
 
 .scoreboard__value-h5{
-    text-align: right;
-    font-size: 5.5vw;    
+    position: absolute;
+    margin: 0;
+    bottom: -3vh;
+    right: 0;
+    padding-right: 6vh;
+    font-size: 11vh;    
     background: -webkit-linear-gradient(left top, #A0F, #F00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
