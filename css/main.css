@@ -373,6 +373,15 @@ input:focus {
     margin-top: 0;
 }
 
+.m-t-10{
+    margin-top: 10px;
+}
+
+.m-t-20{
+    margin-top: 20px;
+}
+
+
 .m-t-40{
     margin-top: 40px;
 }
