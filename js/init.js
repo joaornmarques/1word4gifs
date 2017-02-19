@@ -106,7 +106,6 @@ jQuery(function($) {
         var lowercaseVal = $(this).val().toLocaleLowerCase();
         if(lowercaseVal == answer_key){
             winPoint = true;
-            console.log(winPoint);
             winGame();
         }
     });

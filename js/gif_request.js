@@ -15,9 +15,6 @@ function getGifs(){
     answer_key = keys[num];
     
     
-    console.log(answer_key);
-    console.log(winPoint);
-    
 	var query = domain + answer_key + "&limit=" + 4 + "&offset=" + randomValue + apiKey;
 
 	
@@ -26,7 +23,6 @@ function getGifs(){
 	request.onload = function(){
 		if(request.status >= 200 && request.status < 400){
 			data = JSON.parse(request.responseText);
-			console.log(data);
 			for(var i = 0; i < data.data.length; i++){
                 
                 gifsLink = data.data[i].images.original.url 
