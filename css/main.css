@@ -3,6 +3,7 @@ body{
     background: #181818;
     font-family: 'Poppins', sans-serif;
     font-weight: lighter;
+    max-height: 100vh;
 }
 
 h1,h2,h3,h4,h5,h6,p{
@@ -127,8 +128,10 @@ h4{
 
 .intro-logo__color{
     background: -webkit-linear-gradient(left top, #A0F, #F00);
+    -webkit-background-size: 150% 150%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: gradient-animate 2s ease infinite;
 }
 
 .intro-span{
@@ -137,6 +140,14 @@ h4{
     height: 100vh;
     background-color: rgba(0,0,0,1);  
     animation: overlay-animate 1s;
+}
+
+.intro-display-mobile{
+    display: none;
+}
+
+.intro-display-mobile__details{
+    font-size: 3.3vw;
 }
 
 /*------------GIFS-------------*/
@@ -158,6 +169,7 @@ h4{
     animation: opacity-animate 0.7s cubic-bezier(1,.01,.65,1) ;
 }
 
+
 /*--------GAME MECHANINC----------*/
 
 .timer-bar{
@@ -176,17 +188,21 @@ input{
     float: left;
 }
 
+
+
 .gif__answer-text{
-    width: 60vw;
-    height: 13vh;
     background: none;
     border: none;
+    margin-top: 2.4vh;
+    margin-left: 2.4vh;
     font-family: 'Poppins', sans-serif;
-    padding-left: 30px;
-    padding-top: 10px;
     font-size: 6vh;
     font-weight: 600;
     color: white;
+}
+
+form{
+    height: 0;
 }
 
 input:focus {
@@ -222,9 +238,20 @@ input:focus {
     to {opacity: 1; height: 85vh;}
 }
 
+@keyframes opacity-animate-sm {
+    from {opacity: 0; height: 0;}
+    to {opacity: 1; height: 21.25vh;}
+}
+
 @keyframes image-animate {
     from {opacity: 0; transform: scale(0.4);}
     to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes gradient-animate { 
+    0%{background-position:0% 30%}
+    50%{background-position:100% 71%}
+    100%{background-position:0% 30%}
 }
 
 /*----------SCOREBOARD----------*/
@@ -311,14 +338,36 @@ input:focus {
 
 @media (max-width:767px) { 
     h1{
-        font-size: 30px;
+        font-size: 10vw;
+        letter-spacing: 0.4vw;
     }
+    
+    .intro-punchline{
+        font-size: 3.3vw;    
+    }
+    
     .gif__image{
         width: 100vw;
-        height: 20vh;
+        height: 21.25vh;
+        animation: opacity-animate-sm 0.7s cubic-bezier(1,.01,.65,1) ;
     }
+    
 }
 
+@media (max-width:600px) { 
+    .scoreboard{
+        display: none;
+    }
+}
+/*--------utilities---------*/
+
+.hide{
+    display: hidden;
+}
+
+.show{
+    display: block;
+}
 
 .m-t-0{
     margin-top: 0;
@@ -328,6 +377,10 @@ input:focus {
     margin-top: 40px;
 }
 
-.m-t-5vh{
-    margin-top: 15vh;
+.m-t-60{
+    margin-top: 60px;
+}
+
+.m-t-10vh{
+    margin-top: 10vh;
 }

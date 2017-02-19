@@ -52,11 +52,15 @@ REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
             <div class="intro__content">
                 <h1 class="intro-logo">1 Word <span class="intro-logo__color">4 Gifs</span></h1>
                 <h2 class="intro-punchline">You may be cool, but you know your gifs?</h2>
-                <div class="row center-xs">
+                <div class="row center-xs intro-hide-mobile">
                     <img class="m-t-40 image-icon" src="assets/gif.svg"/>
                 </div>
-                <div class="row center-xs intro-details">
+                <div class="row center-xs intro-details intro-hide-mobile">
                     <a class="button" onclick="closeIntro();newGif();">Let's start</a>
+                </div>
+                <div class="row center-xs intro-display-mobile">
+                    <p class="m-t-60 intro-display-mobile__details">(Please use your desktop PC to play)</p>
+                    <img class="image-icon" src="assets/desktop.svg"/>
                 </div>
             </div>
             <div class="credits"><p>by <a href="http://joaomarques.altervista.org/" target="_blank">JOÃO MARQUES</a> & LUIS ABREU . 2017</p></div>
@@ -79,7 +83,7 @@ REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
         
         <section class="overlay overlay__lose">
             <div class="row center-xs">
-                <img class="m-t-5vh image-icon image-animate" src="assets/wrong.svg"/>
+                <img class="m-t-10vh image-icon image-animate" src="assets/wrong.svg"/>
             </div>
             <div class="row center-xs">
                 <h3 class="m-t-0"><span class="intro-logo__color lose-message"></span></h3>
@@ -97,7 +101,7 @@ REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
         
         <section class="overlay overlay__win">
             <div class="row center-xs">
-                <img class="m-t-5vh image-icon image-animate" src="assets/right.svg"/>
+                <img class="m-t-10vh image-icon image-animate" src="assets/right.svg"/>
             </div>
             <div class="row center-xs">
                 <h3 class="m-t-0"><span class="intro-logo__color win-message"></span><span class="title-note">+1 point</span></h3>

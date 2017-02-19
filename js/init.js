@@ -4,6 +4,7 @@ var timerStart;
 var points=0;
 var winPoint=false;
 
+
 function closeIntro() {
     $("#intro").hide();
     $(".game").css("opacity","1");
@@ -93,9 +94,13 @@ function newGif(){
 }
 
 
-
 jQuery(function($) {
     
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $(".intro-hide-mobile").addClass("hide");
+        $(".intro-display-mobile").addClass("show");
+    }
+
     
     $(document).ready(function() {
         $(".overlay").hide();
