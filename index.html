@@ -52,16 +52,22 @@
             </div> 
             <div class="row center-xs lose-result">
             </div>
+            <div class="row center-xs">
+                <h3 class="m-t-40 points-overlay__title">FINAL SCORE: <span class="points-overlay"></span></h3>
+            </div>
             <div class="row center-xs intro-details">
-                    <a class="button" onclick="newGif()">Play again</a>
+                    <a class="button" onclick="newGif();resetPoints();">Play again</a>
             </div>
         </section>
         <section class="overlay overlay__win">
             <div class="row center-xs">
                 <h3><span class="intro-logo__color win-message"></span><span class="title-note">+1 point</span></h3>
-            </div>    
+            </div> 
+            <div class="row center-xs">
+                <h3 class="m-t-40 points-overlay__title">SCORE: <span class="points-overlay"></span></h3>
+            </div>
             <div class="row center-xs intro-details">
-                    <a class="button" onclick="newGif()">Next ></a>
+                    <a class="button" onclick="newGif()">Next ></a><p class="title-note-xs">or press ENTER</p>
             </div>
         </section>
         

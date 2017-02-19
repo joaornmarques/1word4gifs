@@ -60,7 +60,6 @@ var keys = 		["sonic" ,
 				"facepalm" ,
 				"sad" ,
 				"smile" ,
-				"dank" ,
 				"doge" ,
 				"wrestling" ,
                 "chips" ,
@@ -165,7 +164,7 @@ var keys = 		["sonic" ,
                 "party" ,
                 "muppets" ,
                 "dance" ,
-                "allien" ,
+                "alien" ,
                 "ufo" ,
                 "loading" ,
                 "bacon" ,
@@ -189,16 +188,16 @@ var keys = 		["sonic" ,
                 "eminem" ,
                 "shakira" ,
                 "madonna" ,
-                "Volkswagen" ,
+                "volkswagen" ,
                 "porsche" ,
                 "hazard" ,
                 "jaguar" ,
-                "Lamborghini" ,
+                "lamborghini" ,
                 
 
 
 				];
 
-var message_win = ["Nice catch! ", "Good one! ", "You're clever! ", "Keep up! ", "Nice one! ", "Don't stop now! "];
+var message_win = ["Nice catch! ", "Good one! ", "You're clever! ", "Keep up! ", "Nice one! ", "Don't stop! "];
 
-var message_lose = ["Looooser...", "Game over.", "Wrong!", "That's all folks."];
+var message_lose = ["Looooser...", "Game over.", "You lose!"];

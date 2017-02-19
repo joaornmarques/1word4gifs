@@ -9,6 +9,10 @@ h1,h2,h3,h4,h5,h6,p{
     color: white;
 }
 
+a, p{
+    font-weight: 500;
+}
+
 h1{
     font-size: 60px;
     letter-spacing: 2px;
@@ -37,6 +41,14 @@ h4{
     font-size: 20px;
     padding: 0 10px;
     animation: overlay-animate 0.4s ease 0.7s 3;
+    
+}
+
+.title-note-xs{
+    letter-spacing: 2px;
+    font-size: 12px;
+    padding: 0 15px;
+    margin: 10px 0;
 }
 
 .title-note-big{
@@ -72,8 +84,9 @@ h4{
     font-size: 18px;
     text-align: center;
     margin: 0;
+    font-weight: 500;
 }
-
+ 
 #intro-background{
     z-index: -1;
     position: absolute;
@@ -83,8 +96,10 @@ h4{
     left: 0;
     filter: brightness(0.4);
     -webkit-filter: brightness(0.4);
-    -moz-filter: brightness(0.4);   
+    -moz-filter: brightness(0.4);  
+    animation: overlay-animate 2s ease;
 }
+
 
 .intro__content{
     z-index: 99999;
@@ -112,7 +127,8 @@ h4{
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.8);   
+    background-color: rgba(0,0,0,1);  
+    animation: overlay-animate 1s;
 }
 
 /*------------GIFS-------------*/
@@ -138,7 +154,7 @@ h4{
     position: fixed;
     top: 0;
     left: 0;
-    width: 80vw;
+    width: 100vw;
     height: 20px;
     background: -webkit-linear-gradient(left, #A0F, #F00);
     z-index: 1;
@@ -187,8 +203,8 @@ input:focus {
 }
 
 @keyframes overlay-animate {
-    from {opacity: 0; transform: scale(0.6);}
-    to {opacity: 1; transform: scale(1);}
+    from {opacity: 0; padding-top: 20px;}
+    to {opacity: 1; padding-top: 0; }
 }
 
 @keyframes opacity-animate {
@@ -245,6 +261,19 @@ input:focus {
     opacity: 1;
     animation: overlay-animate 0.3s ease ;
 }
+
+.points-overlay__title{
+    background-color: rgba(255,255,255,0.1);
+    padding: 0 22px;
+    border-radius: 40px;
+    font-size: 20px;
+}
+
+.points-overlay{
+    font-size: 40px;
+}
+
+
 /*---------BREAKPOINT-----------*/
 
 @media (max-width:767px) { 
@@ -255,4 +284,13 @@ input:focus {
         width: 100vw;
         height: 20vh;
     }
+}
+
+
+.m-t-0{
+    margin-top: 0;
+}
+
+.m-t-40{
+    margin-top: 40px;
 }

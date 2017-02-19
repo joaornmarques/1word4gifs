@@ -37,12 +37,20 @@ function winGame(){
     var rand_win_message = message_win[Math.floor(Math.random() * message_win.length)];
     $(".win-message").append('' + rand_win_message + '');
     points++;
+    $(".points-overlay").empty();
+    $(".points-overlay").append('' + points + '');
 }
 
 $(document).keypress(function(e) {
     if(e.which == 13 && winPoint == true) {
         newGif();
     }
+});
+
+$(window).blur(function() {
+    if(timerStart == true){
+        loseGame();
+    }    
 });
 
 function loseGame(){
@@ -53,13 +61,22 @@ function loseGame(){
     var rand_lose_message = message_lose[Math.floor(Math.random() * message_lose.length)];
     $(".lose-message").append('' + rand_lose_message + '');
     timerStart = false;
+    
 }
+
+
 
 function clearWinOverlay(){
     $(".lose-result").empty();
     $(".win-message").empty();
     $(".lose-message").empty();
     winPoint == false;
+}
+
+function resetPoints(){
+    $(".scoreboard__value").empty();
+    $(".scoreboard__value").append('' + 0 + '');
+    points = 0;
 }
 
 function newGif(){
@@ -76,10 +93,13 @@ function newGif(){
 }
 
 
+
 jQuery(function($) {
+    
     
     $(document).ready(function() {
         $(".overlay").hide();
+        $(".points-overlay").append('' + 0 + '');
     });
     
     $( "#answer" ).keyup(function() {

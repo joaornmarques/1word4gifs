@@ -32,7 +32,8 @@ function getGifs(){
                 gifsLink = data.data[i].images.original.url 
                 gifsHtml += '<div class="gif__image gif__image-' + (i+1) + '" style="background-image: url('+ gifsLink +');"></div>';
 			}
-			document.getElementById("gif__container").innerHTML = gifsHtml;
+            $("#gif__container").append(gifsHtml);
+                
 		} else {
 			alert('Oh my GIF! Something bad happened...');
 		}
@@ -56,7 +57,6 @@ function randomGif(){
 		if(request.status >= 200 && request.status < 400){
 			gifURL= JSON.parse(request.responseText).data.image_url;
 			document.getElementById("intro-background").src = gifURL;
-            
 		} else {
 			alert('Oh my GIF! Something bad happened...');
 		}
