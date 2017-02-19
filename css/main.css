@@ -44,6 +44,14 @@ h4{
     
 }
 
+.image-animate{
+    animation: image-animate 0.6s ease;
+}
+
+.image-icon{
+    max-width: 200px;
+}
+
 .title-note-xs{
     letter-spacing: 2px;
     font-size: 12px;
@@ -212,6 +220,11 @@ input:focus {
     to {opacity: 1; height: 85vh;}
 }
 
+@keyframes image-animate {
+    from {opacity: 0; transform: scale(0.4);}
+    to {opacity: 1; transform: scale(1);}
+}
+
 /*----------SCOREBOARD----------*/
 
 .scoreboard{
@@ -223,24 +236,21 @@ input:focus {
 
 .scoreboard__info{
     transform: rotate(90deg);
-    position: absolute;
     right: 0;
     bottom: 0;
     color: #444;
     margin-bottom: 2.6vw;
     margin-right: 0;
+    margin-top: 30px;
     font-size: 1vw;
     letter-spacing: 0.2vw;
     font-weight: 400;
+    float: right;
 }
 
-.scoreboard__value{
-    position: absolute;
+.scoreboard__value-h5{
     text-align: right;
-    margin: 0;
-    right: 4vw;
     font-size: 5.5vw;    
-    top: 0;
     background: -webkit-linear-gradient(left top, #A0F, #F00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -273,6 +283,24 @@ input:focus {
     font-size: 40px;
 }
 
+/*---------CREDITS-----------*/
+
+.credits{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+
+.credits p{
+    text-align: center;
+    font-size: 10px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.credits a{
+    color: white;  
+}
 
 /*---------BREAKPOINT-----------*/
 
@@ -293,4 +321,8 @@ input:focus {
 
 .m-t-40{
     margin-top: 40px;
+}
+
+.m-t-5vh{
+    margin-top: 15vh;
 }

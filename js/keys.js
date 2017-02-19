@@ -295,7 +295,7 @@ var keys = 		["sonic" ,
                 "loop" ,
                 "clarkson" ,
                 "james" ,
-                "hammond"
+                "hammond" ,
                 "trash" ,
                 "dove" ,
                 "kenny" ,
@@ -429,6 +429,7 @@ var keys = 		["sonic" ,
                 "drogba" ,
                 "slenderman" ,
                 "psy" 
+                 
 				]; 
 
 var message_win = ["Nice catch! ", "Good one! ", "You're clever! ", "Keep up! ", "Nice one! ", "Don't stop! "];
