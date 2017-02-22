@@ -26,7 +26,12 @@ function getGifs(){
 			for(var i = 0; i < data.data.length; i++){
                 
                 gifsLink = data.data[i].images.original.url 
-                gifsHtml += '<div class="gif__image gif__image-' + (i+1) + '" style="background-image: url('+ gifsLink +');"></div>';
+                if( $( ".button1x4" ).hasClass( "scoreboard__button--show" ) ){
+                    gifsHtml += '<div class="gif__image gif__image--line gif__image-' + (i+1) + '" style="background-image: url('+ gifsLink +');"></div>';
+                }
+                else{
+                   gifsHtml += '<div class="gif__image gif__image-' + (i+1) + '" style="background-image: url('+ gifsLink +');"></div>'; 
+                }
 			}
             $("#gif__container").append(gifsHtml);
                 

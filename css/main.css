@@ -157,16 +157,21 @@ h4{
 }
 
 .gif__image{
-    width: 25vw;
-    height: 85vh;
+    width: 50vw;
+    height: 42.5vh;
     float: left;
     display: inline;
-    max-height: 85vh;
     background-position: center;
     background-size: cover;
     z-index: -1;
     opacity: 1;
     animation: opacity-animate 0.7s cubic-bezier(1,.01,.65,1) ;
+}
+
+.gif__image--line{
+    width: 25vw;
+    height: 85vh;
+    animation: opacity-animate--line 0.7s cubic-bezier(1,.01,.65,1) ;
 }
 
 
@@ -235,6 +240,11 @@ input:focus {
 
 @keyframes opacity-animate {
     from {opacity: 0; height: 0;}
+    to {opacity: 1; height: 42.5vh;}
+}
+
+@keyframes opacity-animate--line {
+    from {opacity: 0; height: 0;}
     to {opacity: 1; height: 85vh;}
 }
 
@@ -270,7 +280,7 @@ input:focus {
     bottom: 0;
     color: #444;
     margin-bottom: 5vh;
-    margin-right: 0;
+    margin-right: 11vh;
     font-size: 1.8vh;
     letter-spacing: 0.4vh;
     font-weight: 400;
@@ -281,7 +291,7 @@ input:focus {
     margin: 0;
     bottom: -3vh;
     right: 0;
-    padding-right: 6vh;
+    padding-right: 17vh;
     font-size: 11vh;    
     background: -webkit-linear-gradient(left top, #A0F, #F00);
     -webkit-background-clip: text;
@@ -289,6 +299,25 @@ input:focus {
     font-weight: 600;
 }
 
+.scoreboard__button{
+    display: none;
+    width: 8.5vh;
+    height: 8.5vh;
+    opacity: 0.15;
+    margin-top: 4vh;
+    margin-right: 2vh;
+    background-image: url("assets/2x2.svg");
+    transition: 0.2s ease;
+}
+
+.scoreboard__button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.scoreboard__button--show{
+    display: block;
+}
 
 
 /*-----------OVERLAY------------*/

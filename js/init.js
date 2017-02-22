@@ -86,7 +86,6 @@ function newGif(){
     $(".overlay").hide();
     $(".scoreboard__value").empty();
     $(".scoreboard__value").append('' + points + '');
-    
     clearWinOverlay();
     activeTimer();
     getGifs();
@@ -100,7 +99,11 @@ jQuery(function($) {
         $(".intro-hide-mobile").addClass("hide");
         $(".intro-display-mobile").addClass("show");
     }
-
+    
+    $(".change-view-mode").click(function() {  
+        $(".gif__image").toggleClass("gif__image--line");
+        $(".scoreboard__button").toggleClass("scoreboard__button--show");
+    });
     
     $(document).ready(function() {
         $(".overlay").hide();
