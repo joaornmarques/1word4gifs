@@ -7,7 +7,7 @@ var answer_key;
 function getGifs(){
     var gifsHtml = '';
     var gifsLink = '';
-	var randomValue = Math.floor((Math.random() * 20) + 1);
+	var randomValue = Math.floor((Math.random() * 10) + 1);
     
     var unique = true;
     var num = Math.floor(Math.random() * keys.length);
