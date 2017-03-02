@@ -363,6 +363,14 @@ input:focus {
     color: white;  
 }
 
+.giphy-badge{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 100px;
+    animation: image-animate 1s ease;
+}
+
 /*---------BREAKPOINT-----------*/
 
 @media (max-width:767px) { 
@@ -379,6 +387,10 @@ input:focus {
         width: 100vw;
         height: 21.25vh;
         animation: opacity-animate-sm 0.7s cubic-bezier(1,.01,.65,1) ;
+    }
+    
+    .giphy-badge{
+        height: 50px;
     }
     
 }
