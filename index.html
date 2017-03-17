@@ -54,6 +54,7 @@ REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
           js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="intro__overlay"></div>
         <section id="intro" class="intro-span">
             <img id="intro-background" src=""/>
             <div class="intro__content">
@@ -127,6 +128,20 @@ REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
                     <a class="button" onclick="newGif()">Next ></a><p class="title-note-xs">or press ENTER</p>
             </div>
         </section>
+        
+        
+        <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyA-ZLevSpB3BX6VKhl2xw9T514WIyH8Uhg",
+            authDomain: "word-4-gifs.firebaseapp.com",
+            databaseURL: "https://word-4-gifs.firebaseio.com",
+            storageBucket: "word-4-gifs.appspot.com",
+            messagingSenderId: "588658102942"
+          };
+          firebase.initializeApp(config);
+        </script>
         
     </body>
 </html>

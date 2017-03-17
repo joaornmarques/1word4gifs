@@ -89,6 +89,23 @@ h4{
 
 /*-----------INTRO-------------*/
 
+.intro__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 1;
+    transition: 0.5s ease;
+    z-index: 99999;
+}
+
+.intro__overlay--disable{
+    opacity: 0;
+    z-index: -1;
+}
+
 .intro-punchline{
     font-size: 18px;
     text-align: center;
@@ -108,7 +125,6 @@ h4{
     -moz-filter: brightness(0.4);  
     animation: overlay-animate 2s ease;
 }
-
 
 .intro__content{
     z-index: 99999;
@@ -198,11 +214,13 @@ input{
 .gif__answer-text{
     background: none;
     border: none;
-    margin-top: 2.4vh;
-    margin-left: 2.4vh;
+    padding-top: 2.4vh;
+    padding-left: 2.4vh;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     font-size: 6vh;
     font-weight: 600;
+    width: auto;
     color: white;
 }
 
@@ -398,6 +416,10 @@ input:focus {
 @media (max-width:600px) { 
     .scoreboard{
         display: none;
+    }
+    
+    .gif__answer-text{
+        width: 90vw;
     }
 }
 /*--------utilities---------*/

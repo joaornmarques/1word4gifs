@@ -1,5 +1,5 @@
-var apiKey = "&api_key=dc6zaTOxFJmzC"
-var domain = "https://api.giphy.com/v1/gifs/search?q="
+var APIKEY = "&api_key=78Mcv2DxKGKWc"
+var DOMAIN = "https://api.giphy.com/v1/gifs/search?q="
 var request = new XMLHttpRequest;
 var data;
 var answer_key;
@@ -9,13 +9,11 @@ function getGifs(){
     var gifsLink = '';
 	var randomValue = Math.floor((Math.random() * 10) + 1);
     
-    var unique = true;
     var num = Math.floor(Math.random() * keys.length);
     
     answer_key = keys[num];
     
-    
-	var query = domain + answer_key + "&limit=" + 4 + "&offset=" + randomValue + apiKey;
+	var query = DOMAIN + answer_key + "&limit=" + 4 + "&offset=" + randomValue + APIKEY;
 
 	
 	request.open ('GET', query, true);
@@ -52,7 +50,7 @@ function getGifs(){
 
 function randomGif(){
     request = new XMLHttpRequest();
-	request.open('GET', "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=game", true);
+	request.open('GET', "https://api.giphy.com/v1/gifs/random?api_key=78Mcv2DxKGKWc&tag=game", true);
 
 	request.onload = function(){
 		if(request.status >= 200 && request.status < 400){

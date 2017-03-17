@@ -87,9 +87,15 @@ function newGif(){
     $(".scoreboard__value").empty();
     $(".scoreboard__value").append('' + points + '');
     clearWinOverlay();
-    activeTimer();
     getGifs();
+    loadGif();
     winPoint = false; 
+}
+
+function loadGif(){
+    $(".gif__image").ready(function(){
+        activeTimer();
+    });
 }
 
 
@@ -103,11 +109,17 @@ jQuery(function($) {
     $(".change-view-mode").click(function() {  
         $(".gif__image").toggleClass("gif__image--line");
         $(".scoreboard__button").toggleClass("scoreboard__button--show");
+        $("input").focus();
     });
     
     $(document).ready(function() {
         $(".overlay").hide();
         $(".points-overlay").append('' + 0 + '');
+    });
+    
+    $("#intro").ready(function(){
+        console.log("ready!");
+        $(".intro__overlay").addClass("intro__overlay--disable");
     });
     
     $( "#answer" ).keyup(function() {  
