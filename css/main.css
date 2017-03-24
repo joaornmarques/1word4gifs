@@ -362,6 +362,13 @@ input:focus {
     font-size: 40px;
 }
 
+
+/*--------LEADERBOARD--------*/
+
+.leaderboard__table{
+    color: white;
+}
+
 /*---------CREDITS-----------*/
 
 .credits{

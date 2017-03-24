@@ -35,11 +35,12 @@ REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
         
         
         
-        
+        <script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="js/keys.js"></script>
         <script src="js/gif_request.js"></script>
         <script src="js/init.js"></script>
+        <script src="js/leaderboard.js"></script>
         <link rel="stylesheet" href="css/flexboxgrid.css">
         <link rel="stylesheet" href="css/main.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins:500,600" rel="stylesheet">
@@ -47,13 +48,6 @@ REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
 
     <body onload="randomGif();">
         <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
         <div class="intro__overlay"></div>
         <section id="intro" class="intro-span">
             <img id="intro-background" src=""/>
@@ -105,7 +99,14 @@ REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
                 <h3 class="m-t-20 points-overlay__title">FINAL SCORE: <span class="points-overlay"></span></h3>
             </div>
             <div class="row center-xs">
-                <div class="fb-share-button m-t-10" data-href="http://1word4gifs.co.nf/" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F1word4gifs.co.nf%2F&amp;src=sdkpreparse">Share</a></div>
+                <table id="leaderboardTable" class="leaderboard__table" border=1 width=400>
+                  <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                  </tr>
+                </table>
+
+                <input type="text" id="nameInput" placeholder="Name">
             </div>
             <div class="row center-xs intro-details">
                     <a class="button" onclick="newGif();resetPoints();">Play again</a>
@@ -129,19 +130,6 @@ REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
             </div>
         </section>
         
-        
-        <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
-        <script>
-          // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyA-ZLevSpB3BX6VKhl2xw9T514WIyH8Uhg",
-            authDomain: "word-4-gifs.firebaseapp.com",
-            databaseURL: "https://word-4-gifs.firebaseio.com",
-            storageBucket: "word-4-gifs.appspot.com",
-            messagingSenderId: "588658102942"
-          };
-          firebase.initializeApp(config);
-        </script>
         
     </body>
 </html>

@@ -57,7 +57,7 @@ $(window).blur(function() {
 function loseGame(){
     $(".overlay__lose").show();
     $(".overlay__lose").css({"opacity":"1","z-index":"9999"});
-    $("input").prop('disabled', true);
+    $("#answer").prop('disabled', true);
     $(".lose-result").append('<h4><span class="title-note-big">' + answer_key + '</span> was the word.</h4>');
     var rand_lose_message = message_lose[Math.floor(Math.random() * message_lose.length)];
     $(".lose-message").append('' + rand_lose_message + '');
