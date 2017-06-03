@@ -57,8 +57,7 @@ $(function () {
     scoreListView.on("child_changed", changedCallback);
 
     // When the user presses enter on scoreInput, add the score, and update the highest score.
-    $("#nameInput").keypress(function (e) {
-        if (e.keyCode == 13) {
+    $("#scoreSubmit").click(function() {
             var newScore = points;
             var name = $("#nameInput").val();
 
@@ -81,7 +80,6 @@ $(function () {
             // if we return with no arguments, it cancels the transaction.
             return;
         });
-        $(this).off();
-        }
+        showLeaderboard();
     });
 });
