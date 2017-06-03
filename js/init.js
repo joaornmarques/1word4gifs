@@ -1,8 +1,8 @@
-var count=20;
-var counter=setInterval(timer, 1000);
+var count = 20;
+var counter = setInterval(timer, 1000);
 var timerStart;
-var points=0;
-var winPoint=false;
+var points = 0;
+var winPoint = false;
 
 
 function closeIntro() {
@@ -42,6 +42,18 @@ function winGame(){
     $(".points-overlay").append('' + points + '');
 }
 
+function showLeaderboard(){
+    $(".leaderboard").removeClass("hide");
+    $(".leaderboard__input").addClass("hide");
+    $(".lose-info-js").addClass("hide");
+    $(".play-again-js").removeClass("hide");
+}
+
+function hideLeaderboard(){
+    $(".leaderboard").addClass("hide");
+    $(".lose-info-js").removeClass("hide");
+}
+
 $(document).keypress(function(e) {
     if(e.which == 13 && winPoint == true) {
         newGif();
@@ -57,12 +69,17 @@ $(window).blur(function() {
 function loseGame(){
     $(".overlay__lose").show();
     $(".overlay__lose").css({"opacity":"1","z-index":"9999"});
-    $("input").prop('disabled', true);
+    $("#answer").prop('disabled', true);
     $(".lose-result").append('<h4><span class="title-note-big">' + answer_key + '</span> was the word.</h4>');
     var rand_lose_message = message_lose[Math.floor(Math.random() * message_lose.length)];
     $(".lose-message").append('' + rand_lose_message + '');
     timerStart = false;
-    
+    if(points > 0){
+        $(".leaderboard__input").removeClass("hide");
+    }
+    else{
+        $(".play-again-js").removeClass("hide");
+    }
 }
 
 
@@ -76,6 +93,8 @@ function clearWinOverlay(){
 
 function resetPoints(){
     $(".scoreboard__value").empty();
+    $(".points-overlay").empty();
+    $(".points-overlay").append('' + 0 + '');
     $(".scoreboard__value").append('' + 0 + '');
     points = 0;
 }
@@ -86,6 +105,7 @@ function newGif(){
     $(".overlay").hide();
     $(".scoreboard__value").empty();
     $(".scoreboard__value").append('' + points + '');
+    $(".play-again-js").addClass("hide");
     clearWinOverlay();
     getGifs();
     loadGif();
@@ -115,10 +135,10 @@ jQuery(function($) {
     $(document).ready(function() {
         $(".overlay").hide();
         $(".points-overlay").append('' + 0 + '');
+        console.log("Naughy naughty... What are you doing here? Go back to the game!");
     });
     
     $("#intro").ready(function(){
-        console.log("ready!");
         $(".intro__overlay").addClass("intro__overlay--disable");
     });
     
