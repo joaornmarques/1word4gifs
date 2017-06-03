@@ -93,6 +93,8 @@ function clearWinOverlay(){
 
 function resetPoints(){
     $(".scoreboard__value").empty();
+    $(".points-overlay").empty();
+    $(".points-overlay").append('' + 0 + '');
     $(".scoreboard__value").append('' + 0 + '');
     points = 0;
 }
