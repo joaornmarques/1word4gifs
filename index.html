@@ -1,14 +1,3 @@
-<!--
-VOCÊ RECEBEU A: CAPIVARA DOS BRÓDER
-     　/)─―ヘ/)
-　　＿／　　　　＼
- ／　　　●　　　●丶
-｜　　　　　　　▼　|
-｜　　　　　　　亠ノ 　
- U￣U￣￣￣￣U￣
-REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
--->
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -87,29 +76,46 @@ REPASSE A CAPIVARA DOS BRÓDER PRA UM BRÓDER SE NÃO VOCÊ NÃO É BRÓDER
         </div>  
         
         <section class="overlay overlay__lose">
-            <div class="row center-xs">
-                <img class="m-t-10vh image-icon image-animate" src="assets/wrong.svg"/>
+            <div class="lose-info-js">
+                <div class="row center-xs">
+                    <img class="m-t-10vh image-icon image-animate" src="assets/wrong.svg"/>
+                </div>
+                <div class="row center-xs">
+                    <h3 class="m-t-0"><span class="intro-logo__color lose-message"></span></h3>
+                </div> 
+                <div class="row center-xs lose-result">
+                </div>
+                <div class="row center-xs">
+                    <h3 class="m-t-20 points-overlay__title">FINAL SCORE: <span class="points-overlay"></span></h3>
+                </div>
+                <div class="leaderboard__input hide">
+                    <div class="row center-xs m-t-40">
+                        <p class="leaderboard__input-title">TRY YOUR LUCK, SEND YOUR SCORE TO THE LEADERBOARD!</p>
+                    </div>
+                    <div class="row center-xs m-t-10">
+                        <input type="text" id="nameInput" class="leaderboard__input-name" placeholder="Your name">
+                        <a class="button m-l-10">Send</a>
+                    </div>
+                    <div class="row center-xs m-t-20">
+                        <a class="leaderboard__input-title leaderboard__input-title--button" onclick="showLeaderboard()">SKIP THIS ></a>
+                    </div>
+                </div>
+            </div>    
+            <div class="leaderboard hide">
+                <div class="row center-xs">
+                    <h3 class="m-t-60"><span class="intro-logo__color">Hall of fame</span></h3>
+                </div>
+                <div class="row center-xs">
+                    <h4 class="m-t-0">Only true internet lovers have place here!</h4>
+                </div>
+                <div class="row center-xs">
+                    <table id="leaderboardTable" class="leaderboard__table m-t-40" border=1 width=400>
+                    </table>
+                </div>
             </div>
-            <div class="row center-xs">
-                <h3 class="m-t-0"><span class="intro-logo__color lose-message"></span></h3>
-            </div> 
-            <div class="row center-xs lose-result">
-            </div>
-            <div class="row center-xs">
-                <h3 class="m-t-20 points-overlay__title">FINAL SCORE: <span class="points-overlay"></span></h3>
-            </div>
-            <div class="row center-xs">
-                <table id="leaderboardTable" class="leaderboard__table" border=1 width=400>
-                  <tr>
-                    <th>Name</th>
-                    <th>Score</th>
-                  </tr>
-                </table>
-
-                <input type="text" id="nameInput" placeholder="Name">
-            </div>
-            <div class="row center-xs intro-details">
-                    <a class="button" onclick="newGif();resetPoints();">Play again</a>
+            
+            <div class="row center-xs intro-details play-again-js hide">
+                    <a class="button" onclick="newGif();resetPoints();hideLeaderboard();">Play again</a>
             </div>
             <img class="giphy-badge" src="assets/giphy_badge.gif"/>
             <div class="credits"><p>by <a href="http://joaomarques.altervista.org/" target="_blank">JOÃO MARQUES</a> & LUIS ABREU . 2017</p></div>

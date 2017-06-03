@@ -50,7 +50,7 @@ function getGifs(){
 
 function randomGif(){
     request = new XMLHttpRequest();
-	request.open('GET', "https://api.giphy.com/v1/gifs/random?api_key=78Mcv2DxKGKWc&tag=game", true);
+	request.open('GET', "https://api.giphy.com/v1/gifs/random?api_key=78Mcv2DxKGKWc&tag=vaporwave", true);
 
 	request.onload = function(){
 		if(request.status >= 200 && request.status < 400){
