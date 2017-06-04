@@ -193,6 +193,41 @@ h4{
     animation: opacity-animate--line 0.7s cubic-bezier(1,.01,.65,1) ;
 }
 
+.gif__image-loader{
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    animation: gif-load-animate 2s ease infinite;
+    transition: opacity 0.5s ease;
+}
+
+.gif__image-2 .gif__image-loader{
+    animation-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+
+.gif__image-3 .gif__image-loader{
+    animation-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+
+
+.gif__image-4 .gif__image-loader{
+    animation-delay: 0.6s;
+    transition-delay: 0.6s;
+}
+
+
+.gif-loader{
+    display: none;
+}
+
+
+.gif__image--loaded{
+    opacity: 0;
+}
 
 /*--------GAME MECHANINC----------*/
 
@@ -283,6 +318,12 @@ input:focus {
     0%{background-position:0% 30%}
     50%{background-position:100% 71%}
     100%{background-position:0% 30%}
+}
+
+@keyframes gif-load-animate { 
+    0%{background: #181818}
+    50%{background: #333}
+    100%{background: #181818}
 }
 
 /*----------SCOREBOARD----------*/
@@ -477,12 +518,6 @@ input:focus {
         font-size: 3.3vw;    
     }
     
-    .gif__image{
-        width: 100vw;
-        height: 21.25vh;
-        animation: opacity-animate-sm 0.7s cubic-bezier(1,.01,.65,1) ;
-    }
-    
     .giphy-badge{
         height: 60px;
         right: 30px;
@@ -500,6 +535,12 @@ input:focus {
 }
 
 @media (max-width:600px) { 
+    .gif__image{
+        width: 100vw;
+        height: 21.25vh;
+        animation: opacity-animate-sm 0.7s cubic-bezier(1,.01,.65,1) ;
+    }
+    
     .scoreboard{
         display: none;
     }

@@ -25,10 +25,10 @@ function getGifs(){
                 
                 gifsLink = data.data[i].images.original.url 
                 if( $( ".button1x4" ).hasClass( "scoreboard__button--show" ) ){
-                    gifsHtml += '<div class="gif__image gif__image--line gif__image-' + (i+1) + '" style="background-image: url('+ gifsLink +');"></div>';
+                    gifsHtml += '<div class="gif__image gif__image--line gif__image-' + (i+1) + '" style="background-image: url('+ gifsLink +');"><div class="gif__image-loader"><img onload="loadFunc()" class="gif-loader" src="'+ gifsLink +'"/></div></div>';
                 }
                 else{
-                   gifsHtml += '<div class="gif__image gif__image-' + (i+1) + '" style="background-image: url('+ gifsLink +');"></div>'; 
+                   gifsHtml += '<div class="gif__image gif__image-' + (i+1) + '" style="background-image: url('+ gifsLink +');"><div class="gif__image-loader"><img onload="loadFunc()" class="gif-loader" src="'+ gifsLink +'"/></div></div>'; 
                 }
 			}
             $("#gif__container").append(gifsHtml);
@@ -46,7 +46,8 @@ function getGifs(){
     
     var name = keys.splice(num,1);
     keys.push(name);
-}    
+    
+}
 
 function randomGif(){
     request = new XMLHttpRequest();
