@@ -17,7 +17,6 @@ function init(){
 
 function activeTimer(){
     timerStart = true;
-    count = 21;
 }
 
 function timer(){
@@ -111,22 +110,15 @@ function newGif(){
     getGifs();
     imgLoaded = 0;
     winPoint = false; 
-}
-
-function loadGif(){
-    $(".gif__image").ready(function(){
-        activeTimer();
-    });
+    count = 21;
 }
 
 function loadFunc(){
-    console.log("something");
     imgLoaded++;
     if(imgLoaded == 4){
         activeTimer();
         $('.gif__image-loader').addClass('gif__image--loaded');
     }
-    console.log(imgLoaded);
 }
 
 
