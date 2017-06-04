@@ -3,6 +3,7 @@ var counter = setInterval(timer, 1000);
 var timerStart;
 var points = 0;
 var winPoint = false;
+var imgLoaded = 0;
 
 
 function closeIntro() {
@@ -108,7 +109,7 @@ function newGif(){
     $(".play-again-js").addClass("hide");
     clearWinOverlay();
     getGifs();
-    loadGif();
+    imgLoaded = 0;
     winPoint = false; 
 }
 
@@ -116,6 +117,16 @@ function loadGif(){
     $(".gif__image").ready(function(){
         activeTimer();
     });
+}
+
+function loadFunc(){
+    console.log("something");
+    imgLoaded++;
+    if(imgLoaded == 4){
+        activeTimer();
+        $('.gif__image-loader').addClass('gif__image--loaded');
+    }
+    console.log(imgLoaded);
 }
 
 
