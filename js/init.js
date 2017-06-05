@@ -8,7 +8,8 @@ var imgLoaded = 0;
 
 function closeIntro() {
     $("#intro").hide();
-    $(".game").css("opacity","1");
+    $(".intro__overlay").hide();
+    $(".game").show();
 }
 
 function init(){
@@ -22,6 +23,12 @@ function activeTimer(){
 function timer(){
     if(timerStart == true){
         count=count-1;
+        $(".timer-bar__number").empty();
+        $(".timer-bar__number").append('' + count + '');
+        if (count < 10){
+            $(".timer-bar__title").hide();
+        }
+        
         if (count < 0){
             loseGame();
             return;
@@ -106,6 +113,7 @@ function newGif(){
     $(".scoreboard__value").empty();
     $(".scoreboard__value").append('' + points + '');
     $(".play-again-js").addClass("hide");
+    $(".timer-bar__title").show();
     clearWinOverlay();
     getGifs();
     imgLoaded = 0;
@@ -123,6 +131,8 @@ function loadFunc(){
 
 
 jQuery(function($) {
+    
+    $(".game").hide();
     
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         $(".intro-hide-mobile").addClass("hide");

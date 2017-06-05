@@ -85,8 +85,18 @@ h4{
     cursor: pointer;
 }
 
+.button--intro{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.button--intro:hover{
+    color: #181818;
+    border-color: #181818;
+    background-color: transparent;
+}
+
+
 .game{
-    opacity: 0;
     transition: 0.5s ease;
 }
 
@@ -153,12 +163,30 @@ h4{
     animation: gradient-animate 2s ease infinite;
 }
 
+.intro-logo__black{
+    background: -webkit-linear-gradient(left top, #000, #444);
+    -webkit-background-size: 150% 150%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animate 1s ease infinite;
+}
+
 .intro-span{
     position: fixed;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0,0,0,1);  
     animation: overlay-animate 1s;
+}
+
+.intro__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: -webkit-linear-gradient(left top, #A0F, #F00);
+    opacity: 0.6;
 }
 
 .intro-display-mobile{
@@ -241,6 +269,28 @@ h4{
     z-index: 1;
     transition: 0.2s ease;
     box-shadow: 0px 0px 10px #444;
+}
+
+.timer-bar__title{
+    display: flex;
+    float: left;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.5);
+    margin: 2px 5px;
+    overflow: hidden;
+    transition: 0.6s ease;
+}
+
+.timer-bar__number{
+    display: flex;
+    float: right;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 1px;
+    color: white;
 }
 
 input{
