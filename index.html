@@ -5,23 +5,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noydir, noodp">
-        <meta name="keywords" content="Giphy, GIF, Game">
-        <meta name="author" content="TBCS - João Marques, Luis Abreu 2017">
+        <meta name="author" content="João Marques, Luis Abreu 2017">
+        <meta name="keywords" content="gif, giphy, stupid, game, memes">  
+        <link rel="icon" href="assets/favicon.ico">
+        <link rel="canonical" href="http://1word4gifs.co.nf">
+      
         <title>1 word 4 gifs</title>
         
-        <meta name="keywords" content="gif, giphy, stupid, game, memes">
-        <meta name="author" content="João Marques, Luis Abreu 2017">
-        <link rel="icon" href="assets/favicon.ico">
-        <meta property="og:image" content="http://1word4gifs.co.nf/assets/thumbnail.jpg" />
         <meta property="og:image" content="http://joaomarques.altervista.org/assets/thumbnail_1w4g.jpg">
         <meta property="og:title"  content="1 Word 4 Gifs" />
         <meta property="og:url"    content="http://1word4gifs.co.nf"/>
         <meta property="og:type"   content="website" />  
+      
         <meta name="twitter:card" content="1 Word 4 Gifs" />
         <meta name="twitter:site" content="@joaornmarques" />
         <meta name="twitter:creator" content="joaornmarques" />
-        <link rel="canonical" href="http://1word4gifs.co.nf">
-        
         
         
         <script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
@@ -33,36 +31,62 @@
         <link rel="stylesheet" href="css/flexboxgrid.css">
         <link rel="stylesheet" href="css/main.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins:500,600" rel="stylesheet">
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-101176490-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
     </head>
 
     <body onload="randomGif();">
         <div id="fb-root"></div>
-        <div class="intro__overlay"></div>
         <section id="intro" class="intro-span">
-            <img id="intro-background" src=""/>
+            <div class="intro__dialog">
+              <div class="intro__dialog-container">
+                <h2>What is this?</h2>
+                <p>1 Word 4 Gifs is a project started during <a href="https://shiftappens.com/" target="_blank">Shift APPens 2017</a> hackathon by <a href="http://joaomarques.altervista.org/" target="_blank">João Marques</a> and <a href="https://www.behance.net/lcabreu95" target="_blank">Luís Abreu</a>, just for fun. Enjoy!</p>
+                <h2 class="m-t-80">What's new on this v1.1?</h2>
+                <p><span class="c-black">&#9824; View modes:</span> Now you can choose how to see the GIFs, 1x4 or 2x2 grid.</p>
+                <p><span class="c-black">&#9827; Hall of Fame:</span> Prove to the world that you are the best, share your awesomeness in our brand new leaderboard!</p>
+                <p><span class="c-black">&#9829; GIFs loading:</span> Now the game starts only when all the 4 GIFs are loaded.</p>
+                <p><span class="c-black">&#9830; More words to guess:</span> More fun to come!</p>
+              </div>  
+              <a class="intro__question-button" onClick="toggleIntroDialog()">X</a>
+            </div>
+            <img id="intro-background" class="intro__background" src=""/>
+            <span class="intro__overlay"></span>
             <div class="intro__content">
-                <h1 class="intro-logo">1 Word <span class="intro-logo__color">4 Gifs</span></h1>
+                <h1 class="intro-logo">1 Word <span class="intro-logo__black">4 Gifs</span></h1>
                 <h2 class="intro-punchline">How well do you know the internet?</h2>
                 <div class="row center-xs intro-hide-mobile">
                     <img class="m-t-40 image-icon" src="assets/gif.svg"/>
                 </div>
                 <div class="row center-xs intro-details intro-hide-mobile">
-                    <a class="button" onclick="closeIntro();newGif();">Let's start</a>
+                    <a class="button button--intro" onclick="closeIntro();newGif();">Let's start</a>
                 </div>
                 <div class="row center-xs intro-display-mobile">
                     <p class="m-t-60 intro-display-mobile__details">(Please use your desktop PC to play)</p>
                     <img class="image-icon" src="assets/desktop.svg"/>
                 </div>
+                <a class="intro__question-button" onClick="toggleIntroDialog()">?</a>
             </div>
             <img class="giphy-badge" src="assets/giphy_badge.gif"/>
             <div class="credits"><p>by <a href="http://joaomarques.altervista.org/" target="_blank">JOÃO MARQUES</a> & LUIS ABREU . 2017</p></div>
         </section>
         
         <div class="game">
-            <section id="gif__container" onload="isloaded()">
+            <section id="gif__container">
             </section>
             <section class="gif__answer">
-                <div class="timer-bar"></div>
+                <div class="timer-bar">
+                    <span class="timer-bar__title">TIME</span>
+                    <span class="timer-bar__number"></span>
+                </div>
                 <form onsubmit="return false">
                     <input id="answer" class="gif__answer-text" placeholder="Type answer here" type="text"><br>
                 </form>
@@ -110,6 +134,10 @@
                 </div>
                 <div class="row center-xs">
                     <table id="leaderboardTable" class="leaderboard__table m-t-40" border=1 width=400>
+                      <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                      </tr>
                     </table>
                 </div>
             </div>
