@@ -129,9 +129,11 @@ function loadFunc(){
     }
 }
 
+function toggleIntroDialog(){
+    $(".intro__dialog").toggleClass("intro__dialog--visible");
+}
 
 jQuery(function($) {
-    
     $(".game").hide();
     
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -149,10 +151,6 @@ jQuery(function($) {
         $(".overlay").hide();
         $(".points-overlay").append('' + 0 + '');
         console.log("Naughy naughty... What are you doing here? Go back to the game!");
-    });
-    
-    $("#intro").ready(function(){
-        $(".intro__overlay").addClass("intro__overlay--disable");
     });
     
     $( "#answer" ).keyup(function() {  

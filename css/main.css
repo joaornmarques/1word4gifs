@@ -102,21 +102,41 @@ h4{
 
 /*-----------INTRO-------------*/
 
-.intro__overlay{
-    position: fixed;
+
+.intro__background{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
+    animation: overlay-animate 2s ease;
     opacity: 1;
     transition: 0.5s ease;
-    z-index: 99999;
 }
 
-.intro__overlay--disable{
-    opacity: 0;
-    z-index: -1;
+.intro__question-button{
+    position: fixed;
+    font-size: 24px;
+    line-height: 45px;
+    top: 20px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    text-align: center;
+    border: solid 2px white;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 9;
+}
+
+.intro__question-button:hover{
+    color: #181818;
+    border-color: #181818;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .intro-punchline{
@@ -125,19 +145,7 @@ h4{
     margin: 0;
     font-weight: 500;
 }
- 
-#intro-background{
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    filter: brightness(0.25);
-    -webkit-filter: brightness(0.25);
-    -moz-filter: brightness(0.25);  
-    animation: overlay-animate 2s ease;
-}
+
 
 .intro__content{
     z-index: 99999;
@@ -149,6 +157,7 @@ h4{
 
 .intro-logo{
     text-align: center;
+    letter-spacing: 0;
 }
 
 .intro-details{
@@ -186,7 +195,8 @@ h4{
     width: 100vw;
     height: 100vh;
     background: -webkit-linear-gradient(left top, #A0F, #F00);
-    opacity: 0.6;
+    opacity: 0.8;
+    z-index: -1;
 }
 
 .intro-display-mobile{
@@ -195,6 +205,59 @@ h4{
 
 .intro-display-mobile__details{
     font-size: 3.3vw;
+}
+
+.intro__dialog{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    background: -webkit-linear-gradient(left top, #A0F, #F00);
+    -webkit-background-size: 150% 150%;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    animation: gradient-animate 5s ease infinite;
+    transition: transform 1s cubic-bezier(.98,.01,0,.99);
+}
+
+.intro__dialog--visible{
+    transform: translateY(0%);
+}
+
+.intro__dialog-container{
+    padding: 100px 20px 20px 20px;
+    width: 550px;
+    overflow-y: auto;
+}
+
+.intro__dialog-container h2{
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.intro__dialog-container p{
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+}
+
+.intro__dialog-container a{
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.intro__dialog-container a:hover{
+    color: white;
 }
 
 /*------------GIFS-------------*/
@@ -212,13 +275,13 @@ h4{
     background-size: cover;
     z-index: -1;
     opacity: 1;
-    animation: opacity-animate 0.7s cubic-bezier(1,.01,.65,1) ;
+    animation: opacity-animate 1.3s cubic-bezier(.98,.01,0,.99);
 }
 
 .gif__image--line{
     width: 25vw;
     height: 85vh;
-    animation: opacity-animate--line 0.7s cubic-bezier(1,.01,.65,1) ;
+    animation: opacity-animate--line 1.3s cubic-bezier(.98,.01,0,.99);
 }
 
 .gif__image-loader{
@@ -376,6 +439,11 @@ input:focus {
     100%{background: #181818}
 }
 
+@keyframes span-intro-animate {
+    from {transform: translateY(100%);}
+    to {transform: translateY(0%);}
+}
+
 /*----------SCOREBOARD----------*/
 
 .scoreboard{
@@ -473,6 +541,10 @@ input:focus {
 }
 
 .leaderboard__table tr:first-child{
+    border-bottom: none;
+}
+
+.leaderboard__table tr:nth-child(2){
     background: -webkit-linear-gradient(left top, #A0F, #F00);
     -webkit-background-size: 150% 150%;
     animation: gradient-animate 2s ease infinite;
@@ -488,6 +560,7 @@ input:focus {
     font-size: 18px;
 }
 
+
 .leaderboard__table tr td:last-child{
     font-weight: 600;
     font-size: 30px;
@@ -501,7 +574,21 @@ input:focus {
     border: 0;
 }
 
+.leaderboard__table tr th{
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 35px;
+    text-align: left;
+    padding: 0 0 10px 20px;
+}
 
+.leaderboard__table tr th:last-child{
+    text-align: right;
+    padding: 0 20px 10px 0;
+}
 
 .leaderboard__input-title{
     font-size: 12px;
@@ -582,6 +669,10 @@ input:focus {
         right: -80px;
     }
     
+    .intro__dialog-container{
+        padding-top: 50px;
+    }
+    
 }
 
 @media (max-width:600px) { 
@@ -609,6 +700,11 @@ input:focus {
     display: block;
 }
 
+.c-black{
+    color: black;
+    font-weight: 600;
+}
+
 .m-t-0{
     margin-top: 0;
 }
@@ -626,6 +722,10 @@ input:focus {
 }
 
 .m-t-60{
+    margin-top: 60px;
+}
+
+.m-t-80{
     margin-top: 60px;
 }
 
