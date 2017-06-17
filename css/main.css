@@ -4,6 +4,7 @@ body{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     max-height: 100vh;
+    overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6,p{
@@ -60,6 +61,7 @@ h4{
     font-size: 12px;
     padding: 0 15px;
     margin: 10px 0;
+    animation: text-slide-animate 1s 0.2s cubic-bezier(.98,.01,0,.99);
 }
 
 .title-note-big{
@@ -87,6 +89,7 @@ h4{
 
 .button--intro{
     background-color: rgba(0,0,0,0.2);
+    animation: overlay-animate 1.15s cubic-bezier(.71,.01,.27,1);
 }
 
 .button--intro:hover{
@@ -110,7 +113,6 @@ h4{
     height: 100vh;
     top: 0;
     left: 0;
-    animation: overlay-animate 2s ease;
     opacity: 1;
     transition: 0.5s ease;
 }
@@ -130,6 +132,7 @@ h4{
     color: white;
     background-color: rgba(0,0,0,0.2);
     z-index: 9;
+    animation: point-animate 1.5s ease;
 }
 
 .intro__question-button:hover{
@@ -144,20 +147,27 @@ h4{
     text-align: center;
     margin: 0;
     font-weight: 500;
+    animation: overlay-animate 0.85s cubic-bezier(.71,.01,.27,1);
 }
 
 
 .intro__content{
     z-index: 99999;
+    animation: overlay-animate 1s cubic-bezier(.71,.01,.27,1);
 }
 
-.intro-button{
+.button--intro{
     margin: auto;
 }
 
 .intro-logo{
     text-align: center;
     letter-spacing: 0;
+    animation: overlay-animate 0.7s cubic-bezier(.71,.01,.27,1);
+}
+
+.intro-image{
+    animation: overlay-animate 1s cubic-bezier(.71,.01,.27,1);
 }
 
 .intro-details{
@@ -185,7 +195,6 @@ h4{
     width: 100vw;
     height: 100vh;
     background-color: rgba(0,0,0,1);  
-    animation: overlay-animate 1s;
 }
 
 .intro__overlay{
@@ -218,17 +227,17 @@ h4{
     -webkit-background-size: 150% 150%;
     height: 100%;
     width: 100%;
-    transform: translateY(100%);
+    transform: translateY(100%) matrix(1, -0.05, 0, 0.8, 0, 0);
     animation: gradient-animate 5s ease infinite;
     transition: transform 1s cubic-bezier(.98,.01,0,.99);
 }
 
 .intro__dialog--visible{
-    transform: translateY(0%);
+    transform: translateY(0%) matrix(1, 0, 0, 1, 0, 0);
 }
 
 .intro__dialog-container{
-    padding: 100px 20px 20px 20px;
+    padding: 50px 20px 20px 20px;
     width: 550px;
     overflow-y: auto;
 }
@@ -375,6 +384,10 @@ input{
     color: white;
 }
 
+.gif__answer-animate{
+    animation: gif__answer-animate 1s cubic-bezier(.98,.01,0,.99);
+}
+
 form{
     height: 0;
 }
@@ -403,18 +416,18 @@ input:focus {
 }
 
 @keyframes overlay-animate {
-    from {opacity: 0; padding-top: 20px;}
-    to {opacity: 1; padding-top: 0; }
+    from {opacity: 0; transform: translateY(80px) matrix(1, -0.05, 0, 0.8, 0, 0);}
+    to {opacity: 1; transform: translateY(0px) matrix(1, 0, 0, 1, 0, 0);}
 }
 
 @keyframes opacity-animate {
-    from {opacity: 0; height: 0;}
-    to {opacity: 1; height: 42.5vh;}
+    from {opacity: 0; height: 0; transform: matrix(1, -0.2, 0, 0.6, 0, 0);}
+    to {opacity: 1; height: 42.5vh; translateY(0px) matrix(1, 0, 0, 1, 0, 0);}
 }
 
 @keyframes opacity-animate--line {
-    from {opacity: 0; height: 0;}
-    to {opacity: 1; height: 85vh;}
+    from {opacity: 0; height: 0; transform: matrix(1, -0.2, 0, 0.6, 0, 0);}
+    to {opacity: 1; height: 85vh; translateY(0px) matrix(1, 0, 0, 1, 0, 0); }
 }
 
 @keyframes opacity-animate-sm {
@@ -442,6 +455,26 @@ input:focus {
 @keyframes span-intro-animate {
     from {transform: translateY(100%);}
     to {transform: translateY(0%);}
+}
+
+@keyframes text-slide-animate {
+    from{opacity: 0; transform: translateX(-40px);}
+    to{opacity: 1; transform: translateX(0px);}
+}
+
+@keyframes text-slide-table-animate {
+    from{opacity: 0; padding-right: 40px;}
+    to{opacity: 1; padding-right: 25px;}
+}
+
+@keyframes scoreboard-value-animate {
+    from{transform: translateY(150%);}
+    to{transform: translateY(0%);}
+}
+
+@keyframes gif__answer-animate {
+    from {opacity: 0; transform: translateY(-100%);}
+    to {opacity: 1; transform: translateX(0%);}
 }
 
 /*----------SCOREBOARD----------*/
@@ -479,6 +512,10 @@ input:focus {
     font-weight: 600;
 }
 
+.scoreboard__value-h5-animation{
+    animation: scoreboard-value-animate 1s cubic-bezier(.98,.01,0,.99);
+}
+
 .scoreboard__button{
     display: none;
     width: 8.5vh;
@@ -509,7 +546,7 @@ input:focus {
     background-color: rgba(0,0,0,0.85);
     z-index: -1;
     opacity: 1;
-    animation: overlay-animate 0.3s ease ;
+    animation: point-animate 0.3s ease ;
 }
 
 .points-overlay__title{
@@ -521,6 +558,26 @@ input:focus {
 
 .points-overlay{
     font-size: 40px;
+}
+
+.overlay-content-animate{
+    animation: overlay-animate 1s cubic-bezier(.71,.01,.27,1);
+}
+
+.overlay-content-animate--1{
+    animation: overlay-animate 0.7s cubic-bezier(.71,.01,.27,1);
+}
+
+.overlay-content-animate--2{
+    animation: overlay-animate 0.85s cubic-bezier(.71,.01,.27,1);
+}
+
+.overlay-content-animate--3{
+    animation: overlay-animate 1s cubic-bezier(.71,.01,.27,1);
+}
+
+.overlay-content-animate--4{
+    animation: overlay-animate 1.15s cubic-bezier(.71,.01,.27,1);
 }
 
 
@@ -568,6 +625,7 @@ input:focus {
     border-radius: 0 40px 40px 0;
     width: 25%;
     text-align: right;
+    animation: text-slide-table-animate 0.8s 0.25s cubic-bezier(.98,.01,0,.99);
 }
 
 .leaderboard__table td, .leaderboard__table th{
@@ -623,6 +681,7 @@ input:focus {
     transform: rotate(-90deg);
     bottom: 115px;
     right: -90px;
+    animation: point-animate 1.5s ease;
 }
 
 .credits p{
@@ -670,7 +729,7 @@ input:focus {
     }
     
     .intro__dialog-container{
-        padding-top: 50px;
+        padding-top: 40px;
     }
     
 }

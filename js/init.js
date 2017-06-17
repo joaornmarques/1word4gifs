@@ -47,6 +47,8 @@ function winGame(){
     points++;
     $(".points-overlay").empty();
     $(".points-overlay").append('' + points + '');
+    $(".scoreboard__value-h5").removeClass("scoreboard__value-h5-animation");
+    $(".gif__answer-text").removeClass("gif__answer-animate");
 }
 
 function showLeaderboard(){
@@ -81,6 +83,8 @@ function loseGame(){
     var rand_lose_message = message_lose[Math.floor(Math.random() * message_lose.length)];
     $(".lose-message").append('' + rand_lose_message + '');
     timerStart = false;
+    $(".scoreboard__value-h5").removeClass("scoreboard__value-h5-animation");
+    $(".gif__answer-text").removeClass("gif__answer-animate");
     if(points > 0){
         $(".leaderboard__input").removeClass("hide");
     }
@@ -114,6 +118,8 @@ function newGif(){
     $(".scoreboard__value").append('' + points + '');
     $(".play-again-js").addClass("hide");
     $(".timer-bar__title").show();
+    $(".scoreboard__value-h5").addClass("scoreboard__value-h5-animation");
+    $(".gif__answer-text").addClass("gif__answer-animate");
     clearWinOverlay();
     getGifs();
     imgLoaded = 0;
