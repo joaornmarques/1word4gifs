@@ -50,6 +50,8 @@
               <div class="intro__dialog-container">
                 <h2>What is this?</h2>
                 <p>1 Word 4 Gifs is a project started during <a href="https://shiftappens.com/" target="_blank">Shift APPens 2017</a> hackathon by <a href="http://joaomarques.altervista.org/" target="_blank">João Marques</a> and <a href="https://www.behance.net/lcabreu95" target="_blank">Luís Abreu</a>, just for fun. Enjoy!</p>
+                <h2 class="m-t-80">How to play</h2>
+                <p>The game is simple, you have to guess the common word between four GIF images in a time range of 20 seconds. For each guessed word you get one point. Good luck!</p>
                 <h2 class="m-t-80">What's new on this v1.1?</h2>
                 <p><span class="c-black">&#9824; View modes:</span> Now you can choose how to see the GIFs, 1x4 or 2x2 grid.</p>
                 <p><span class="c-black">&#9827; Hall of Fame:</span> Prove to the world that you are the best, share your awesomeness in our brand new leaderboard!</p>
@@ -64,7 +66,7 @@
                 <h1 class="intro-logo">1 Word <span class="intro-logo__black">4 Gifs</span></h1>
                 <h2 class="intro-punchline">How well do you know the internet?</h2>
                 <div class="row center-xs intro-hide-mobile">
-                    <img class="m-t-40 image-icon" src="assets/gif.svg"/>
+                    <img class="m-t-40 image-icon intro-image" src="assets/gif.svg"/>
                 </div>
                 <div class="row center-xs intro-details intro-hide-mobile">
                     <a class="button button--intro" onclick="closeIntro();newGif();">Let's start</a>
@@ -73,8 +75,8 @@
                     <p class="m-t-60 intro-display-mobile__details">(Please use your desktop PC to play)</p>
                     <img class="image-icon" src="assets/desktop.svg"/>
                 </div>
-                <a class="intro__question-button" onClick="toggleIntroDialog()">?</a>
             </div>
+            <a class="intro__question-button" onClick="toggleIntroDialog()">?</a>
             <img class="giphy-badge" src="assets/giphy_badge.gif"/>
             <div class="credits"><p>by <a href="http://joaomarques.altervista.org/" target="_blank">JOÃO MARQUES</a> & LUIS ABREU . 2017</p></div>
         </section>
@@ -88,10 +90,10 @@
                     <span class="timer-bar__number"></span>
                 </div>
                 <form onsubmit="return false">
-                    <input id="answer" class="gif__answer-text" placeholder="Type answer here" type="text"><br>
+                    <input id="answer" class="gif__answer-text gif__answer-animate" placeholder="Type answer here" type="text"><br>
                 </form>
                 <div class="scoreboard">
-                    <h5 class="scoreboard__value-h5"><span class="scoreboard__value"></span></h5>
+                    <h5 class="scoreboard__value-h5 scoreboard__value-h5-animation"><span class="scoreboard__value"></span></h5>
                     <p class="scoreboard__info">SCORE</p>
                     <img class="scoreboard__button change-view-mode scoreboard__button--show button2x2" src="assets/2x2.svg">
                     <img class="scoreboard__button change-view-mode button1x4" src="assets/1x4.svg">
@@ -101,18 +103,18 @@
         
         <section class="overlay overlay__lose">
             <div class="lose-info-js">
-                <div class="row center-xs">
+                <div class="row center-xs  overlay-content-animate--1">
                     <img class="m-t-10vh image-icon image-animate" src="assets/wrong.svg"/>
                 </div>
-                <div class="row center-xs">
+                <div class="row center-xs  overlay-content-animate--2">
                     <h3 class="m-t-0"><span class="intro-logo__color lose-message"></span></h3>
                 </div> 
-                <div class="row center-xs lose-result">
+                <div class="row center-xs lose-result  overlay-content-animate--3">
                 </div>
-                <div class="row center-xs">
+                <div class="row center-xs  overlay-content-animate--3">
                     <h3 class="m-t-20 points-overlay__title">FINAL SCORE: <span class="points-overlay"></span></h3>
                 </div>
-                <div class="leaderboard__input hide">
+                <div class="leaderboard__input hide overlay-content-animate--4">
                     <div class="row center-xs m-t-40">
                         <p class="leaderboard__input-title">TRY YOUR LUCK, SEND YOUR SCORE TO THE LEADERBOARD!</p>
                     </div>
@@ -126,13 +128,13 @@
                 </div>
             </div>    
             <div class="leaderboard hide">
-                <div class="row center-xs">
+                <div class="row center-xs  overlay-content-animate--1">
                     <h3 class="m-t-60"><span class="intro-logo__color">Hall of fame</span></h3>
                 </div>
-                <div class="row center-xs">
+                <div class="row center-xs overlay-content-animate--2">
                     <h4 class="m-t-0">Only true internet lovers have place here!</h4>
                 </div>
-                <div class="row center-xs">
+                <div class="row center-xs overlay-content-animate--3">
                     <table id="leaderboardTable" class="leaderboard__table m-t-40" border=1 width=400>
                       <tr>
                         <th>Name</th>
@@ -142,7 +144,7 @@
                 </div>
             </div>
             
-            <div class="row center-xs intro-details play-again-js hide">
+            <div class="row center-xs intro-details play-again-js hide overlay-content-animate--4">
                     <a class="button" onclick="hideLeaderboard();newGif();resetPoints();">Play again</a>
             </div>
             <img class="giphy-badge" src="assets/giphy_badge.gif"/>
@@ -150,18 +152,20 @@
         </section>
         
         <section class="overlay overlay__win">
-            <div class="row center-xs">
-                <img class="m-t-10vh image-icon image-animate" src="assets/right.svg"/>
-            </div>
-            <div class="row center-xs">
-                <h3 class="m-t-0"><span class="intro-logo__color win-message"></span><span class="title-note">+1 point</span></h3>
-            </div> 
-            <div class="row center-xs">
-                <h3 class="m-t-40 points-overlay__title">SCORE: <span class="points-overlay"></span></h3>
-            </div>
-            <div class="row center-xs intro-details">
-                    <a class="button" onclick="newGif()">Next ></a><p class="title-note-xs">or press ENTER</p>
-            </div>
+            
+                <div class="row center-xs overlay-content-animate--1">
+                    <img class="m-t-10vh image-icon image-animate" src="assets/right.svg"/>
+                </div>
+                <div class="row center-xs overlay-content-animate--2">
+                    <h3 class="m-t-0"><span class="intro-logo__color win-message"></span><span class="title-note">+1 point</span></h3>
+                </div> 
+                <div class="row center-xs overlay-content-animate--3">
+                    <h3 class="m-t-40 points-overlay__title">SCORE: <span class="points-overlay"></span></h3>
+                </div>
+                <div class="row center-xs intro-details overlay-content-animate--4">
+                        <a class="button" onclick="newGif()">Next ></a><p class="title-note-xs">or press ENTER</p>
+                </div>
+            
         </section>
         
         
