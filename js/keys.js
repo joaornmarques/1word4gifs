@@ -538,6 +538,17 @@ var keys = [
                 "saturn",
                 "minecraft",
                 "sims",
+                "wii",
+                "vegeta",
+                "broccoli",
+                "moustache",
+                "crocodile",
+                "fry",
+                "flanders",
+                "elmo",
+                "bowie",
+                "pancakes",
+                "waffles"
            ];
 
 var message_win = ["Nice catch! ", "Good one! ", "You're clever! ", "Keep up! ", "Nice one! ", "Don't stop! "];
