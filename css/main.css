@@ -81,8 +81,8 @@ h4{
 }
 
 .button:hover{
-    color: #A0F;
-    border-color: #A0F;
+    color: #E40051;
+    border-color: #E40051;
     transition: 0.2s;
     cursor: pointer;
 }
@@ -660,7 +660,7 @@ input:focus {
 }
 
 .leaderboard__input-title--button:hover{
-    color: #A0F;
+    color: #E40051;
 }
 
 .leaderboard__input-name{
