@@ -612,7 +612,7 @@ input:focus {
 }
 
 .leaderboard__table tr:nth-child(2){
-    background: -webkit-linear-gradient(left top, #A0F, #F00);
+    background-color: rgba(255,255,255,0.1);
     -webkit-background-size: 150% 150%;
     animation: gradient-animate 2s ease infinite;
     border-bottom: none;
