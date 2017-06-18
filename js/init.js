@@ -117,6 +117,7 @@ function newGif(){
     $(".scoreboard__value").empty();
     $(".scoreboard__value").append('' + points + '');
     $(".play-again-js").addClass("hide");
+    $(".timer-bar").addClass("timer-bar--intro");
     $(".timer-bar__title").show();
     $(".scoreboard__value-h5").addClass("scoreboard__value-h5-animation");
     $(".gif__answer-text").addClass("gif__answer-animate");

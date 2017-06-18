@@ -336,11 +336,16 @@ h4{
     top: 0;
     left: 0;
     width: 100vw;
-    height: 20px;
+    height: 0px;
     background: -webkit-linear-gradient(left, #A0F, #F00);
     z-index: 1;
     transition: 0.2s ease;
     box-shadow: 0px 0px 10px #444;
+    overflow: hidden;
+}
+
+.timer-bar--intro{
+    height: 20px;
 }
 
 .timer-bar__title{
@@ -625,7 +630,6 @@ input:focus {
     border-radius: 0 40px 40px 0;
     width: 25%;
     text-align: right;
-    animation: text-slide-table-animate 0.8s 0.25s cubic-bezier(.98,.01,0,.99);
 }
 
 .leaderboard__table td, .leaderboard__table th{
