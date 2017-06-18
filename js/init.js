@@ -136,6 +136,10 @@ function loadFunc(){
     }
 }
 
+function loadIntroFunc(){
+    $(".intro__background").addClass("intro__background--loaded");
+}
+
 function toggleIntroDialog(){
     $(".intro__dialog").toggleClass("intro__dialog--visible");
 }

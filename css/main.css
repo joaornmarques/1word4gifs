@@ -113,8 +113,12 @@ h4{
     height: 100vh;
     top: 0;
     left: 0;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.intro__background--loaded{
     opacity: 1;
-    transition: 0.5s ease;
 }
 
 .intro__question-button{
