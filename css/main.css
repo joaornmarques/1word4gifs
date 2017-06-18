@@ -493,6 +493,7 @@ input:focus {
     right: 0;
     bottom: 0;
     height: 15vh;
+    animation: scoreboard-value-animate 1s cubic-bezier(.98,.01,0,.99);
 }
 
 .scoreboard__info{

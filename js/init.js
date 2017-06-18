@@ -63,18 +63,6 @@ function hideLeaderboard(){
     $(".lose-info-js").removeClass("hide");
 }
 
-$(document).keypress(function(e) {
-    if(e.which == 13 && winPoint == true) {
-        newGif();
-    }
-});
-
-$(window).blur(function() {
-    if(timerStart == true){
-        loseGame();
-    }    
-});
-
 function loseGame(){
     $(".overlay__lose").show();
     $(".overlay__lose").css({"opacity":"1","z-index":"9999"});
@@ -170,5 +158,17 @@ jQuery(function($) {
             winPoint = true;
             winGame();
         }
+    });
+    
+    $(document).keypress(function(e) {
+        if(e.keyCode == 13 && winPoint == true) {
+            newGif();
+        }
+    });
+
+    $(window).blur(function() {
+        if(timerStart == true){
+            loseGame();
+        }    
     });
 });
