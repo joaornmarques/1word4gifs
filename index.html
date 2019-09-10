@@ -6,22 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noydir, noodp">
         <meta name="author" content="João Marques, Luis Abreu 2017">
-        <meta name="keywords" content="gif, giphy, stupid, game, memes">  
+        <meta name="keywords" content="gif, giphy, stupid, game, memes">
         <link rel="icon" href="assets/favicon.ico">
-        <link rel="canonical" href="http://1word4gifs.co.nf">
-        
+        <link rel="canonical" href="http://1word4gifs.fun">
+
         <title>1 word 4 gifs</title>
-        
+
         <meta property="og:image" content="http://joaomarques.altervista.org/assets/thumbnail_1w4g.jpg">
         <meta property="og:title"  content="1 Word 4 Gifs" />
-        <meta property="og:url"    content="http://1word4gifs.co.nf"/>
-        <meta property="og:type"   content="website" />  
+        <meta property="og:url"    content="http://1word4gifs.fun"/>
+        <meta property="og:type"   content="website" />
         <meta name="theme-color" content="#E40051" />
         <meta name="twitter:card" content="1 Word 4 Gifs" />
         <meta name="twitter:site" content="@joaornmarques" />
         <meta name="twitter:creator" content="joaornmarques" />
-        
-        
+
         <script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="js/keys.js"></script>
@@ -57,7 +56,7 @@
                 <p><span class="c-black">&#9827; Hall of Fame:</span> Prove to the world that you are the best, share your awesomeness in our brand new leaderboard!</p>
                 <p><span class="c-black">&#9829; GIFs loading:</span> Now the game starts only when all the 4 GIFs are loaded.</p>
                 <p><span class="c-black">&#9830; More words to guess:</span> More fun to come!</p>
-              </div>  
+              </div>
               <a class="intro__question-button" onClick="toggleIntroDialog()">X</a>
             </div>
             <img id="intro-background" class="intro__background" onload="loadIntroFunc()" src=""/>
@@ -80,7 +79,7 @@
             <img class="giphy-badge" src="assets/giphy_badge.gif"/>
             <div class="credits"><p>by <a href="http://joaomarques.website/" target="_blank">JOÃO MARQUES</a> & LUIS ABREU . 2017</p></div>
         </section>
-        
+
         <div class="game">
             <section id="gif__container">
             </section>
@@ -99,8 +98,8 @@
                     <img class="scoreboard__button change-view-mode button1x4" src="assets/1x4.svg">
                 </div>
             </section>
-        </div>  
-        
+        </div>
+
         <section class="overlay overlay__lose">
             <div class="lose-info-js">
                 <div class="row center-xs  overlay-content-animate--1">
@@ -108,7 +107,7 @@
                 </div>
                 <div class="row center-xs  overlay-content-animate--2">
                     <h3 class="m-t-0"><span class="intro-logo__color lose-message"></span></h3>
-                </div> 
+                </div>
                 <div class="row center-xs lose-result  overlay-content-animate--3">
                 </div>
                 <div class="row center-xs  overlay-content-animate--3">
@@ -126,7 +125,7 @@
                         <a class="leaderboard__input-title leaderboard__input-title--button" onclick="showLeaderboard()">SKIP THIS ></a>
                     </div>
                 </div>
-            </div>    
+            </div>
             <div class="leaderboard hide">
                 <div class="row center-xs  overlay-content-animate--1">
                     <h3 class="m-t-60"><span class="intro-logo__color">Hall of fame</span></h3>
@@ -143,31 +142,30 @@
                     </table>
                 </div>
             </div>
-            
+
             <div class="row center-xs intro-details play-again-js hide overlay-content-animate--4">
                     <a class="button" onclick="hideLeaderboard();newGif();resetPoints();">Play again</a>
             </div>
             <img class="giphy-badge" src="assets/giphy_badge.gif"/>
             <div class="credits"><p>by <a href="http://joaomarques.website/" target="_blank">JOÃO MARQUES</a> & LUIS ABREU . 2017</p></div>
         </section>
-        
+
         <section class="overlay overlay__win">
-            
+
                 <div class="row center-xs overlay-content-animate--1">
                     <img class="m-t-10vh image-icon image-animate" src="assets/right.svg"/>
                 </div>
                 <div class="row center-xs overlay-content-animate--2">
                     <h3 class="m-t-0"><span class="intro-logo__color win-message"></span><span class="title-note">+1 point</span></h3>
-                </div> 
+                </div>
                 <div class="row center-xs overlay-content-animate--3">
                     <h3 class="m-t-40 points-overlay__title">SCORE: <span class="points-overlay"></span></h3>
                 </div>
                 <div class="row center-xs intro-details overlay-content-animate--4">
                         <a class="button" onclick="newGif()">Next ></a><p class="title-note-xs">or press ENTER</p>
                 </div>
-            
+
         </section>
-        
-        
+
     </body>
 </html>
