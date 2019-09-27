@@ -28,7 +28,7 @@ function timer(){
         if (count < 10){
             $(".timer-bar__title").hide();
         }
-        
+
         if (count < 0){
             loseGame();
             return;
@@ -112,7 +112,7 @@ function newGif(){
     clearWinOverlay();
     getGifs();
     imgLoaded = 0;
-    winPoint = false; 
+    winPoint = false;
     count = 21;
 }
 
@@ -132,34 +132,49 @@ function toggleIntroDialog(){
     $(".intro__dialog").toggleClass("intro__dialog--visible");
 }
 
+function validateAnswer(){
+  var lowercaseVal = $("#answer").val().toLocaleLowerCase();
+  if(lowercaseVal == answer_key){
+    winPoint = true;
+    winGame();
+  }
+}
+
+
 jQuery(function($) {
     $(".game").hide();
-    
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        $(".intro-hide-mobile").addClass("hide");
-        $(".intro-display-mobile").addClass("show");
-    }
-    
-    $(".change-view-mode").click(function() {  
+
+    $(".change-view-mode").click(function() {
         $(".gif__image").toggleClass("gif__image--line");
         $(".scoreboard__button").toggleClass("scoreboard__button--show");
         $("input").focus();
     });
-    
+
     $(document).ready(function() {
         $(".overlay").hide();
         $(".points-overlay").append('' + 0 + '');
         console.log("Naughy naughty... What are you doing here? Go back to the game!");
     });
-    
-    $( "#answer" ).keyup(function() {  
-        var lowercaseVal = $(this).val().toLocaleLowerCase();
-        if(lowercaseVal == answer_key){
-            winPoint = true;
-            winGame();
-        }
+
+    $("#answer").keyup(function() {
+      validateAnswer();
     });
-    
+
+    $(".key-js").click(function() {
+      $("#answer").val($('#answer').val() + $(this).text());
+      validateAnswer();
+    });
+
+    $(".key-del-js").click(function() {
+      $("#answer").val("");
+    });
+
+    $(".key-back-js").click(function() {
+      $("#answer").val(function(index, value){
+        return value.substr(0, value.length - 1);
+      })
+    });
+
     $(document).keypress(function(e) {
         if(e.keyCode == 13 && winPoint == true) {
             newGif();
@@ -169,6 +184,6 @@ jQuery(function($) {
     $(window).blur(function() {
         if(timerStart == true){
             loseGame();
-        }    
+        }
     });
 });
