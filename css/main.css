@@ -334,6 +334,59 @@ h4{
     opacity: 0;
 }
 
+/*--------KEYBOARD---------*/
+
+.keyboard{
+  display: none;
+}
+
+@media (max-width:767px) {
+  .keyboard{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 12px;
+  }
+
+  .keyboard__row{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .keyboard button{
+    width: 10vw;
+    height: 10vw;
+    border: 0;
+    background-color: transparent;
+    color: white;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  .keyboard button.key-del-js{
+    font-size: 12px;
+    color: #A0F;
+  }
+
+  .keyboard button.key-back-js{
+    color: #A0F;
+  }
+
+  .keyboard button:focus{
+    outline: none;
+  }
+
+  .keyboard button:hover{
+    background-color: #333;
+  }
+}
+
 /*--------GAME MECHANINC----------*/
 
 .timer-bar{
@@ -746,8 +799,8 @@ input:focus {
 
 @media (max-width:600px) {
     .gif__image{
-        width: 100vw;
-        height: 21.25vh;
+        width: 50vw;
+        height: 33vh;
         animation: opacity-animate-sm 0.7s cubic-bezier(1,.01,.65,1) ;
     }
 
@@ -756,7 +809,10 @@ input:focus {
     }
 
     .gif__answer-text{
-        width: 90vw;
+      font-size: 28px;
+      width: calc(100vw - 12px);
+      padding-left: 12px;
+      padding-top: 12px;
     }
 }
 /*--------utilities---------*/
