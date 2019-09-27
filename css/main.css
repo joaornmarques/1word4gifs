@@ -54,6 +54,7 @@ h4{
 
 .image-icon{
     max-width: 200px;
+    max-height: 150px;
 }
 
 .title-note-xs{
@@ -332,59 +333,6 @@ h4{
 
 .gif__image--loaded{
     opacity: 0;
-}
-
-/*--------KEYBOARD---------*/
-
-.keyboard{
-  display: none;
-}
-
-@media (max-width:767px) {
-  .keyboard{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    position: absolute;
-    bottom: 0;
-    padding-bottom: 12px;
-  }
-
-  .keyboard__row{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .keyboard button{
-    width: 10vw;
-    height: 10vw;
-    border: 0;
-    background-color: transparent;
-    color: white;
-    border-radius: 4px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-
-  .keyboard button.key-del-js{
-    font-size: 12px;
-    color: #A0F;
-  }
-
-  .keyboard button.key-back-js{
-    color: #A0F;
-  }
-
-  .keyboard button:focus{
-    outline: none;
-  }
-
-  .keyboard button:hover{
-    background-color: #333;
-  }
 }
 
 /*--------GAME MECHANINC----------*/
@@ -800,7 +748,7 @@ input:focus {
 @media (max-width:600px) {
     .gif__image{
         width: 50vw;
-        height: 33vh;
+        height: calc(50vh - 35px);
         animation: opacity-animate-sm 0.7s cubic-bezier(1,.01,.65,1) ;
     }
 

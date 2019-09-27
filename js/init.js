@@ -160,21 +160,6 @@ jQuery(function($) {
       validateAnswer();
     });
 
-    $(".key-js").click(function() {
-      $("#answer").val($('#answer').val() + $(this).text());
-      validateAnswer();
-    });
-
-    $(".key-del-js").click(function() {
-      $("#answer").val("");
-    });
-
-    $(".key-back-js").click(function() {
-      $("#answer").val(function(index, value){
-        return value.substr(0, value.length - 1);
-      })
-    });
-
     $(document).keypress(function(e) {
         if(e.keyCode == 13 && winPoint == true) {
             newGif();
