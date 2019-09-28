@@ -101,6 +101,7 @@ function resetPoints(){
 function newGif(){
     $(".gif__image").remove();
     $(".overlay").hide();
+    $("input").prop('disabled', false).val('');
     $(".scoreboard__value").empty();
     $(".scoreboard__value").append('' + points + '');
     $(".play-again-js").addClass("hide");
@@ -109,7 +110,7 @@ function newGif(){
     $(".scoreboard__value-h5").addClass("scoreboard__value-h5-animation");
     $(".gif__answer-text").addClass("gif__answer-animate");
     if ($(window).width() > 600) {
-      $("input").prop('disabled', false).val('').focus();
+      $("input").focus();
     }
     clearWinOverlay();
     getGifs();
@@ -165,16 +166,19 @@ jQuery(function($) {
     $(".key-js").click(function() {
       $("#answer").val($('#answer').val() + $(this).text());
       validateAnswer();
+      $(this).blur();
     });
 
     $(".key-del-js").click(function() {
       $("#answer").val("");
+      $(this).blur();
     });
 
     $(".key-back-js").click(function() {
       $("#answer").val(function(index, value){
         return value.substr(0, value.length - 1);
       })
+      $(this).blur();
     });
 
     $(document).keypress(function(e) {

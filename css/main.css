@@ -105,6 +105,8 @@ h4{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 /*-----------INTRO-------------*/
@@ -280,8 +282,14 @@ h4{
 
 /*------------GIFS-------------*/
 
-#gif__conainer{
+#gif__container{
     max-width: 100vw;
+}
+@media (max-width:600px) {
+  #gif__container{
+    height: auto;
+    flex: 100%;
+  }
 }
 
 .gif__image{
@@ -344,13 +352,13 @@ h4{
   display: none;
 }
 
-@media (max-width:767px) {
+@media (max-width:600px) {
   .keyboard{
     display: flex;
     width: 100%;
     flex-direction: column;
-    position: absolute;
-    bottom: 5vh;
+    padding: 12px 0;
+    border-top: solid 1px #444;
   }
 
   .keyboard__row{
@@ -383,10 +391,12 @@ h4{
 
   .keyboard button:focus{
     outline: none;
+    animation: keyboard-button-focus 0.2s ease;
   }
 
-  .keyboard button:hover{
-    background-color: #333;
+  @keyframes keyboard-button-focus {
+      from {background-color: #A0F;}
+      to {background-color: transparent;}
   }
 }
 
@@ -497,8 +507,8 @@ input:focus {
 }
 
 @keyframes opacity-animate-sm {
-    from {opacity: 0; height: 0;}
-    to {opacity: 1; height: 21.25vh;}
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 @keyframes image-animate {
@@ -803,7 +813,7 @@ input:focus {
 @media (max-width:600px) {
     .gif__image{
         width: 50vw;
-        height: 33vh;
+        height: 50%;
         animation: opacity-animate-sm 0.7s cubic-bezier(1,.01,.65,1) ;
     }
 
@@ -817,6 +827,7 @@ input:focus {
       width: calc(100vw - 12px);
       padding-left: 12px;
       padding-top: 12px;
+      padding-bottom: 12px;
     }
 }
 /*--------utilities---------*/
