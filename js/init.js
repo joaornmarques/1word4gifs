@@ -166,19 +166,16 @@ jQuery(function($) {
     $(".key-js").click(function() {
       $("#answer").val($('#answer').val() + $(this).text());
       validateAnswer();
-      $(this).blur();
     });
 
     $(".key-del-js").click(function() {
       $("#answer").val("");
-      $(this).blur();
     });
 
     $(".key-back-js").click(function() {
       $("#answer").val(function(index, value){
         return value.substr(0, value.length - 1);
       })
-      $(this).blur();
     });
 
     $(document).keypress(function(e) {
