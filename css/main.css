@@ -101,6 +101,9 @@ h4{
 
 
 .game{
+    position: absolute;
+    top: 0;
+    left: 0;
     transition: 0.5s ease;
     width: 100vw;
     height: 100vh;
@@ -369,7 +372,7 @@ h4{
 
   .keyboard button{
     width: 10vw;
-    height: 10vw;
+    height: 12vw;
     border: 0;
     background-color: transparent;
     color: white;
@@ -389,9 +392,12 @@ h4{
     color: #A0F;
   }
 
+  .keyboard button:hover{
+    animation: keyboard-button-focus 0.3s ease;
+  }
+
   .keyboard button:focus{
     outline: none;
-    animation: keyboard-button-focus 0.2s ease;
   }
 
   @keyframes keyboard-button-focus {
@@ -512,8 +518,8 @@ input:focus {
 }
 
 @keyframes image-animate {
-    from {opacity: 0; transform: scale(0.4);}
-    to {opacity: 1; transform: scale(1);}
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 @keyframes gradient-animate {
@@ -549,8 +555,8 @@ input:focus {
 }
 
 @keyframes gif__answer-animate {
-    from {opacity: 0; transform: translateY(-100%);}
-    to {opacity: 1; transform: translateX(0%);}
+    from {opacity: 0; transform: translateY(-30%);}
+    to {opacity: 1; transform: translateY(0%);}
 }
 
 /*----------SCOREBOARD----------*/
