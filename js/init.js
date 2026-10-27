@@ -3,7 +3,11 @@ var counter = setInterval(timer, 1000);
 var timerStart;
 var points = 0;
 var winPoint = false;
+var wonWithAlt = false;
 var imgLoaded = 0;
+
+var message_win = ["Nice catch! ", "Good one! ", "You're clever! ", "Keep up! ", "Nice one! ", "Don't stop! "];
+var message_lose = ["Looooser...", "Game over.", "You lose!"];
 
 
 function closeIntro() {
@@ -28,6 +32,9 @@ function timer(){
         if (count < 10){
             $(".timer-bar__title").hide();
         }
+        if (count === 10){
+            showHint(true);
+        }
 
         if (count < 0){
             loseGame();
@@ -44,6 +51,9 @@ function winGame(){
     timerStart = false;
     var rand_win_message = message_win[Math.floor(Math.random() * message_win.length)];
     $(".win-message").append('' + rand_win_message + '');
+    if (wonWithAlt){
+        $(".win-message").append('<span class="title-note">In English: ' + answer_key + '</span>');
+    }
     points++;
     $(".points-overlay").empty();
     $(".points-overlay").append('' + points + '');
@@ -87,7 +97,7 @@ function clearWinOverlay(){
     $(".lose-result").empty();
     $(".win-message").empty();
     $(".lose-message").empty();
-    winPoint == false;
+    winPoint = false;
 }
 
 function resetPoints(){
@@ -113,6 +123,8 @@ function newGif(){
       $("input").focus();
     }
     clearWinOverlay();
+    answer_key = null;
+    $("#answer").attr("placeholder", "Loading...");
     getGifs();
     imgLoaded = 0;
     winPoint = false;
@@ -135,9 +147,20 @@ function toggleIntroDialog(){
     $(".intro__dialog").toggleClass("intro__dialog--visible");
 }
 
+// Ignore case, accents, spaces and punctuation: "Homem-Aranha" counts as "homemaranha".
+function normaliseAnswer(text){
+  var plain = text.toLowerCase();
+  if (plain.normalize) plain = plain.normalize("NFD");
+  return plain.replace(/[^a-z0-9]/g, "");
+}
+
 function validateAnswer(){
-  var lowercaseVal = $("#answer").val().toLocaleLowerCase();
-  if(lowercaseVal == answer_key){
+  if(!answer_key || !timerStart) return;
+  var guess = normaliseAnswer($("#answer").val());
+  var alternatives = (current_word && current_word.alt) || [];
+  var isAlt = alternatives.indexOf(guess) !== -1;
+  if(guess === answer_key || isAlt){
+    wonWithAlt = isAlt;
     winPoint = true;
     winGame();
   }
