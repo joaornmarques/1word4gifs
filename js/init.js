@@ -22,6 +22,8 @@ function init(){
 
 function activeTimer(){
     timerStart = true;
+    // The player may have typed the answer while the GIFs were still loading.
+    validateAnswer();
 }
 
 function timer(){
@@ -154,12 +156,32 @@ function normaliseAnswer(text){
   return plain.replace(/[^a-z0-9]/g, "");
 }
 
+// Forgive doubled letters and singular/plural: "wafle", "waffle" and "waffles" all match.
+// Short words stay strict, so "we" doesn't count as "wwe".
+function looseAnswer(text){
+  var plain = normaliseAnswer(text);
+  if (plain.length < 4) return plain;
+  plain = plain.replace(/(.)\1+/g, "$1");
+  if (plain.length > 4) plain = plain.replace(/s$/, "");
+  return plain;
+}
+
+function isOtherWord(plain){
+  return plain !== answer_key && WORDS.some(function(word){ return word.w === plain; });
+}
+
+function matchesAnswer(guess, target){
+  if (guess === normaliseAnswer(target)) return true;
+  // Loose match, unless the guess is a different word in the game ("tiger" is not "tigger").
+  return !isOtherWord(guess) && looseAnswer(guess) === looseAnswer(target);
+}
+
 function validateAnswer(){
   if(!answer_key || !timerStart) return;
   var guess = normaliseAnswer($("#answer").val());
   var alternatives = (current_word && current_word.alt) || [];
-  var isAlt = alternatives.indexOf(guess) !== -1;
-  if(guess === answer_key || isAlt){
+  var isAlt = !matchesAnswer(guess, answer_key) && alternatives.some(function(alt){ return matchesAnswer(guess, alt); });
+  if(matchesAnswer(guess, answer_key) || isAlt){
     wonWithAlt = isAlt;
     winPoint = true;
     winGame();

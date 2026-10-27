@@ -147,8 +147,8 @@ function randomGif(){
 
     request.onload = function(){
         if (request.status >= 200 && request.status < 400){
-            var gifURL = JSON.parse(request.responseText).data.image_url;
-            document.getElementById("intro-background").src = gifURL;
+            var gifURL = gifUrl(JSON.parse(request.responseText).data || {});
+            if (gifURL) document.getElementById("intro-background").src = gifURL;
         }
     };
 
